@@ -7,6 +7,7 @@ export function Hero() {
 
   return (
     <section
+      className="hero-section"
       style={{
         minHeight: "100vh",
         background: "#000",
