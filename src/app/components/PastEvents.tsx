@@ -1,53 +1,46 @@
 import { motion } from "motion/react";
 
-import img1 from "../../imports/WhatsApp Image 2026-05-09 at 10.50.33 PM.jpeg";
-import img2 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.24 PM.jpeg";
-import img3 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.25 PM.jpeg";
-import img4 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.25 PM (1).jpeg";
-import img5 from "../../imports/Group_4.png";
-import img6 from "../../imports/Group 5.png";
-import img7 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.31 PM.jpeg";
-
 // 4-col editorial grid, 3 rows
+// Drop past-1.jpg through past-7.jpg into the /public folder on GitHub
 const gridItems = [
   {
-    src: img1,
+    src: "/past-1.jpg",
     alt: "Panel discussion on stage at The Product Street",
     gridColumn: "1 / 3",
     gridRow: "1 / 2",
   },
   {
-    src: img5,
+    src: "/past-5.jpg",
     alt: "Attendees at The Product Street photo booth",
     gridColumn: "3 / 5",
     gridRow: "1 / 2",
   },
   {
-    src: img2,
+    src: "/past-2.jpg",
     alt: "Full audience at The Product Street event",
     gridColumn: "1 / 2",
     gridRow: "2 / 3",
   },
   {
-    src: img3,
+    src: "/past-3.jpg",
     alt: "Engaged attendees during a session",
     gridColumn: "2 / 3",
     gridRow: "2 / 3",
   },
   {
-    src: img4,
+    src: "/past-4.jpg",
     alt: "Speaker dinner and community gathering",
     gridColumn: "3 / 5",
     gridRow: "2 / 3",
   },
   {
-    src: img6,
+    src: "/past-6.jpg",
     alt: "Community moments at The Product Street",
     gridColumn: "1 / 3",
     gridRow: "3 / 4",
   },
   {
-    src: img7,
+    src: "/past-7.jpg",
     alt: "Behind the scenes at The Product Street",
     gridColumn: "3 / 5",
     gridRow: "3 / 4",

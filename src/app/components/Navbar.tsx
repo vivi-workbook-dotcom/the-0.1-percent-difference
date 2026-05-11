@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logoSrc from "../../imports/logo.png";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +36,7 @@ export function Navbar() {
       >
         {/* Logo image */}
         <img
-          src={logoSrc}
+          src="/logo.png"
           alt="The Product Street"
           style={{
             height: 46,
