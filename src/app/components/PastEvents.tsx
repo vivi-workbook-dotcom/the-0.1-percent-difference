@@ -1,46 +1,45 @@
 import { motion } from "motion/react";
 
 // 4-col editorial grid, 3 rows
-// Drop past-1.jpg through past-7.jpg into the /public folder on GitHub
 const gridItems = [
   {
-    src: "/past-1.jpg",
+    src: "/past-1.png",
     alt: "Panel discussion on stage at The Product Street",
     gridColumn: "1 / 3",
     gridRow: "1 / 2",
   },
   {
-    src: "/past-5.jpg",
+    src: "/past-5.jpeg",
     alt: "Attendees at The Product Street photo booth",
     gridColumn: "3 / 5",
     gridRow: "1 / 2",
   },
   {
-    src: "/past-2.jpg",
+    src: "/past-2.png",
     alt: "Full audience at The Product Street event",
     gridColumn: "1 / 2",
     gridRow: "2 / 3",
   },
   {
-    src: "/past-3.jpg",
+    src: "/past-3.png",
     alt: "Engaged attendees during a session",
     gridColumn: "2 / 3",
     gridRow: "2 / 3",
   },
   {
-    src: "/past-4.jpg",
+    src: "/past-4.jpeg",
     alt: "Speaker dinner and community gathering",
     gridColumn: "3 / 5",
     gridRow: "2 / 3",
   },
   {
-    src: "/past-6.jpg",
+    src: "/past-6.jpeg",
     alt: "Community moments at The Product Street",
     gridColumn: "1 / 3",
     gridRow: "3 / 4",
   },
   {
-    src: "/past-7.jpg",
+    src: "/past-7.jpeg",
     alt: "Behind the scenes at The Product Street",
     gridColumn: "3 / 5",
     gridRow: "3 / 4",
