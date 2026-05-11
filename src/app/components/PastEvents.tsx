@@ -131,6 +131,7 @@ export function PastEvents() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="past-events-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",

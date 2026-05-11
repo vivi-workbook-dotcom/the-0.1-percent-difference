@@ -84,10 +84,21 @@ export default function App() {
 
         @media (max-width: 768px) {
           .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          section { padding-top: 80px !important; padding-bottom: 80px !important; }
+          .past-events-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            grid-template-rows: auto !important;
+          }
+          .past-events-grid > div {
+            grid-column: auto !important;
+            grid-row: auto !important;
+            height: 200px !important;
+          }
         }
 
         @media (max-width: 640px) {
-          section { padding-left: 20px !important; padding-right: 20px !important; }
+          section { padding-left: 20px !important; padding-right: 20px !important;
+                    padding-top: 60px !important; padding-bottom: 60px !important; }
           .footer-cta-strip { padding-left: 20px !important; padding-right: 20px !important; }
           .footer-bottom { padding-left: 20px !important; padding-right: 20px !important; }
           .footer-grid { padding-left: 20px !important; padding-right: 20px !important; }
@@ -95,6 +106,23 @@ export default function App() {
           .agenda-header-row { display: none !important; }
           .agenda-row { grid-template-columns: 1fr !important; gap: 8px !important; }
           .agenda-duration { display: none !important; }
+          .past-events-grid {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto !important;
+          }
+          .past-events-grid > div {
+            grid-column: auto !important;
+            grid-row: auto !important;
+            height: 220px !important;
+          }
+          .organizer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .sponsor-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .tickets-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .venue-details { flex-direction: column !important; }
+          .hero-meta { flex-direction: column !important; gap: 16px !important; }
+          .hero-ctas { width: 100% !important; }
+          .hero-ctas a, .hero-ctas button { width: 100% !important; text-align: center !important; justify-content: center !important; }
+          nav > div { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
 
