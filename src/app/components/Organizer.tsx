@@ -1,9 +1,7 @@
 import { Youtube, Linkedin, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
-// TODO: Replace with real photo — drop at /public/vethavarshini.jpg
-const PHOTO_URL =
-  "https://images.unsplash.com/photo-1769755449051-5e90bc9cd691?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+const PHOTO_URL = "/vethavarshini.jpeg";
 
 export function Organizer() {
   return (
