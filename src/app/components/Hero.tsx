@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import logoSrc from "../../imports/logo.png";
 
 export function Hero() {
   const scrollTo = (id: string) => {

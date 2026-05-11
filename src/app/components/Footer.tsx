@@ -1,5 +1,4 @@
 import { Youtube, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
-import logoSrc from "../../imports/logo.png";
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -143,7 +142,7 @@ export function Footer() {
         <div>
           <div style={{ marginBottom: 20 }}>
             <img
-              src={logoSrc}
+              src="/logo.png"
               alt="The Product Street"
               style={{
                 height: 32,
