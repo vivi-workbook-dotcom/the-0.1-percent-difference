@@ -1,5 +1,5 @@
 import { Youtube, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
-import logoSrc from "../../imports/Screenshot_2026-05-10_at_2.24.22_AM.png";
+import logoSrc from "../../imports/Group 5.png";
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
