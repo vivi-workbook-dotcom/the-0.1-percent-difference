@@ -1,6 +1,36 @@
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 
 export function Theme() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const description = (
+    <motion.p
+      initial={{ opacity: 0, x: isMobile ? 0 : 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      style={{
+        fontFamily: "Poppins, sans-serif",
+        fontSize: 14,
+        color: "#f4f3ef",
+        opacity: 0.35,
+        maxWidth: 340,
+        lineHeight: 1.85,
+        textAlign: isMobile ? "left" : "right",
+      }}
+    >
+      Enterprise product leaders and startup builders — in one room.
+    </motion.p>
+  );
+
   return (
     <section
       id="theme"
@@ -20,7 +50,7 @@ export function Theme() {
             justifyContent: "space-between",
             flexWrap: "wrap",
             gap: 40,
-            marginBottom: 80,
+            marginBottom: isMobile ? 32 : 80,
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -39,23 +69,7 @@ export function Theme() {
             </span>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: 14,
-              color: "#f4f3ef",
-              opacity: 0.35,
-              maxWidth: 340,
-              lineHeight: 1.85,
-              textAlign: "right",
-            }}
-          >
-            Enterprise product leaders and startup builders — in one room.
-          </motion.p>
+          {!isMobile && description}
         </div>
 
         {/* ── Big headline ── */}
@@ -78,6 +92,8 @@ export function Theme() {
           What does<br />
           <span style={{ color: "#f6584b" }}>'0.1%'</span> mean?
         </motion.h2>
+
+        {isMobile && <div style={{ marginTop: 24, marginBottom: 8 }}>{description}</div>}
 
         {/* ── Context intro ── */}
         <motion.p
