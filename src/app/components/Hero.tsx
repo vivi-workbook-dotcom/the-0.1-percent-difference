@@ -255,9 +255,10 @@ export function Hero() {
         >
           {/* Event meta */}
           <div
+            className="hero-meta-row"
             style={{
               display: "flex",
-              flexWrap: "wrap",
+              flexWrap: "nowrap",
               gap: 0,
             }}
           >
@@ -268,6 +269,7 @@ export function Hero() {
             ].map((item, i) => (
               <div
                 key={i}
+                className="hero-meta-item"
                 style={{
                   paddingRight: 32,
                   paddingLeft: i > 0 ? 32 : 0,
@@ -303,7 +305,7 @@ export function Hero() {
           </div>
 
           {/* CTAs */}
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+          <div className="hero-ctas" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             {/* TODO: replace href with real Razorpay Payment Link */}
             <a
               href="https://rzp.io/l/PLACEHOLDER"
