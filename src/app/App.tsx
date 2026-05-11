@@ -122,7 +122,9 @@ export default function App() {
           .hero-meta { flex-direction: column !important; gap: 16px !important; }
           /* Logo smaller on mobile */
           nav img { height: 30px !important; }
-          /* Hero inner content — match the 20px side padding of all other sections */
+          /* Hero: zero out section-level padding (inner .hero-content handles it) */
+          .hero-section { padding-left: 0 !important; padding-right: 0 !important; }
+          /* Hero inner content — the single source of 20px side padding */
           .hero-content { padding-left: 20px !important; padding-right: 20px !important; }
           /* Hero meta — tighter spacing so Date/Time/Venue stay on one line */
           .hero-meta-item { padding-right: 14px !important; }
