@@ -120,8 +120,14 @@ export default function App() {
           .tickets-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .venue-details { flex-direction: column !important; }
           .hero-meta { flex-direction: column !important; gap: 16px !important; }
-          .hero-ctas { width: 100% !important; }
-          .hero-ctas a, .hero-ctas button { width: 100% !important; text-align: center !important; justify-content: center !important; }
+          /* Logo smaller on mobile */
+          nav img { height: 30px !important; }
+          /* Hero meta — tighter spacing so Date/Time/Venue stay on one line */
+          .hero-meta-item { padding-right: 14px !important; }
+          .hero-meta-item + .hero-meta-item { padding-left: 14px !important; }
+          /* Hero CTAs — equal full width, stacked */
+          .hero-ctas { width: 100% !important; flex-direction: column !important; }
+          .hero-ctas a, .hero-ctas button { width: 100% !important; box-sizing: border-box !important; text-align: center !important; justify-content: center !important; }
           nav > div { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
