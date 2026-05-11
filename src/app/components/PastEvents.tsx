@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
 
-import img1 from "../../imports/Screenshot_2026-05-09_at_11.11.06_PM.png";
-import img2 from "../../imports/Screenshot_2026-05-09_at_11.11.28_PM.png";
-import img3 from "../../imports/Screenshot_2026-05-09_at_11.11.57_PM.png";
-import img4 from "../../imports/Screenshot_2026-05-09_at_11.12.17_PM.png";
+import img1 from "../../imports/WhatsApp Image 2026-05-09 at 10.50.33 PM.jpeg";
+import img2 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.24 PM.jpeg";
+import img3 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.25 PM.jpeg";
+import img4 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.25 PM (1).jpeg";
 import img5 from "../../imports/Group_4.png";
-import img6 from "../../imports/Group_5.png";
-import img7 from "../../imports/Group_6.png";
+import img6 from "../../imports/Group 5.png";
+import img7 from "../../imports/WhatsApp Image 2026-05-09 at 10.56.31 PM.jpeg";
 
 // 4-col editorial grid, 3 rows
 const gridItems = [

@@ -1,4 +1,4 @@
-import "../styles/fonts.css";
+import "./components/styles/fonts.css";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
@@ -7,7 +7,7 @@ import { Agenda } from "./components/Agenda";
 import { Speakers } from "./components/Speakers";
 import { PastEvents } from "./components/PastEvents";
 import { Organizer } from "./components/Organizer";
-import { PodcastStills } from "./components/PodcastStills";
+import { PodcastStills } from "./components/PodcastSkills";
 import { Venue } from "./components/Venue";
 import { Tickets } from "./components/Tickets";
 import { Sponsor } from "./components/Sponsor";
