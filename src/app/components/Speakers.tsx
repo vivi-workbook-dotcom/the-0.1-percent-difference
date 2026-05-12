@@ -1,7 +1,16 @@
 import { Lock } from "lucide-react";
 import { motion } from "motion/react";
 
-const placeholders = [1, 2, 3, 4, 5];
+const confirmedSpeakers = [
+  {
+    name: "Mahuya Ghosh",
+    title: "Director & AI Strategist",
+    company: "Dell",
+    photo: "/speaker-mahuya.jpeg",
+  },
+];
+
+const placeholderCount = 4;
 
 export function Speakers() {
   return (
@@ -81,7 +90,7 @@ export function Speakers() {
           </motion.p>
         </div>
 
-        {/* Speaker skeleton cards */}
+        {/* Speaker cards */}
         <div
           style={{
             display: "flex",
@@ -93,13 +102,83 @@ export function Speakers() {
             scrollbarWidth: "none",
           }}
         >
-          {placeholders.map((_, i) => (
+          {/* Confirmed speakers */}
+          {confirmedSpeakers.map((speaker, i) => (
+            <motion.div
+              key={speaker.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              style={{
+                minWidth: 200,
+                flexShrink: 0,
+                scrollSnapAlign: "start",
+                border: "1px solid rgba(246,88,75,0.2)",
+                position: "relative",
+                overflow: "hidden",
+                background: "#080808",
+              }}
+            >
+              <img
+                src={speaker.photo}
+                alt={speaker.name}
+                style={{
+                  width: "100%",
+                  height: 240,
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                  display: "block",
+                  filter: "brightness(0.88) saturate(0.9)",
+                }}
+              />
+              <div style={{ padding: "20px 20px 24px" }}>
+                <div
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: "#f4f3ef",
+                    letterSpacing: "-0.01em",
+                    marginBottom: 6,
+                  }}
+                >
+                  {speaker.name}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 11,
+                    color: "#f4f3ef",
+                    opacity: 0.45,
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {speaker.title}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 11,
+                    color: "#f6584b",
+                    opacity: 0.7,
+                    marginTop: 4,
+                  }}
+                >
+                  {speaker.company}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Placeholder slots */}
+          {Array.from({ length: placeholderCount }).map((_, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              transition={{ duration: 0.4, delay: (confirmedSpeakers.length + i) * 0.08 }}
               style={{
                 minWidth: 200,
                 flexShrink: 0,
@@ -110,7 +189,6 @@ export function Speakers() {
                 background: "#080808",
               }}
             >
-              {/* Shimmer */}
               <div
                 style={{
                   position: "absolute",
@@ -121,8 +199,6 @@ export function Speakers() {
                   zIndex: 1,
                 }}
               />
-
-              {/* Placeholder image area */}
               <div
                 style={{
                   width: "100%",
@@ -136,26 +212,9 @@ export function Speakers() {
               >
                 <Lock size={20} color="rgba(244,243,239,0.12)" />
               </div>
-
-              {/* Info */}
               <div style={{ padding: "20px 20px 24px" }}>
-                <div
-                  style={{
-                    width: 80,
-                    height: 10,
-                    background: "#1a1a1a",
-                    borderRadius: 2,
-                    marginBottom: 10,
-                  }}
-                />
-                <div
-                  style={{
-                    width: 120,
-                    height: 8,
-                    background: "#141414",
-                    borderRadius: 2,
-                  }}
-                />
+                <div style={{ width: 80, height: 10, background: "#1a1a1a", borderRadius: 2, marginBottom: 10 }} />
+                <div style={{ width: 120, height: 8, background: "#141414", borderRadius: 2 }} />
               </div>
             </motion.div>
           ))}
