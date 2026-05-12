@@ -6,7 +6,7 @@ const confirmedSpeakers = [
     name: "Mahuya Ghosh",
     title: "Director & AI Strategist",
     company: "Dell",
-    photo: "/speaker-mahuya.jpeg",
+    photo: "/speaker-mahuya.jpg",
   },
 ];
 
