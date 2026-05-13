@@ -18,7 +18,7 @@ const confirmedSpeakers = [
     name: "Sanjay Mandava",
     title: "2x YC Founder & CEO",
     company: "Landeed (YC S22)",
-    photo: "/speaker-sanjay.jpeg",
+    photo: "/speaker-sanjay.jpg",
   },
 ];
 
