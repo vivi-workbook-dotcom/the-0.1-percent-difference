@@ -3,6 +3,12 @@ import { motion } from "motion/react";
 
 const confirmedSpeakers = [
   {
+    name: "Varun Ande",
+    title: "Head of Design",
+    company: "Sarvam.ai",
+    photo: "/speaker-varun.jpeg",
+  },
+  {
     name: "Mahuya Ghosh",
     title: "Director & AI Strategist",
     company: "Dell",
