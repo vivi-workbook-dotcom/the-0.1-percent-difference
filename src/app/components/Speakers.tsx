@@ -6,7 +6,7 @@ const confirmedSpeakers = [
     name: "Varun Ande",
     title: "Head of Design",
     company: "Sarvam.ai",
-    photo: "/speaker-varun.jpeg",
+    photo: "/speaker-varun.jpg",
   },
   {
     name: "Mahuya Ghosh",
