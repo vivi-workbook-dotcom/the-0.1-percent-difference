@@ -20,6 +20,12 @@ const confirmedSpeakers = [
     company: "Landeed (YC S22)",
     photo: "/speaker-sanjay.jpg",
   },
+  {
+    name: "Saurav Basu",
+    title: "Head of AI Labs",
+    company: "ADP India, Ex-Microsoft",
+    photo: "/speaker-saurav.jpeg",
+  },
 ];
 
 const placeholderCount = 4;
