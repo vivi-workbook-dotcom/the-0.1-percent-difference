@@ -110,6 +110,7 @@ export function Speakers() {
 
         {/* Speaker cards */}
         <div
+          className="speakers-grid"
           style={{
             display: "flex",
             gap: 16,

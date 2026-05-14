@@ -99,6 +99,13 @@ export default function App() {
         @media (max-width: 640px) {
           section { padding-left: 20px !important; padding-right: 20px !important;
                     padding-top: 60px !important; padding-bottom: 60px !important; }
+          .speakers-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            overflow-x: visible !important;
+            padding-bottom: 0 !important;
+          }
+          .speakers-grid > div { min-width: unset !important; }
           .footer-cta-strip { padding-left: 20px !important; padding-right: 20px !important; }
           .footer-bottom { padding-left: 20px !important; padding-right: 20px !important; }
           .footer-grid { padding-left: 20px !important; padding-right: 20px !important; }
@@ -138,10 +145,10 @@ export default function App() {
 
       <Navbar />
       <Hero />
+      <Speakers />
       <Theme />
       <WhoShouldAttend />
       <Agenda />
-      <Speakers />
       <PastEvents />
       <Organizer />
       <PodcastStills />
