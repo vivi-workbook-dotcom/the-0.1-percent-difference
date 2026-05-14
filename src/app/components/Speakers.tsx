@@ -24,7 +24,7 @@ const confirmedSpeakers = [
     name: "Saurav Basu",
     title: "Head of AI Labs",
     company: "ADP India, Ex-Microsoft",
-    photo: "/speaker-saurav.jpeg",
+    photo: "/speaker-saurav.jpg",
   },
 ];
 
