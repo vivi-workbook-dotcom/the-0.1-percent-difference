@@ -28,7 +28,7 @@ const confirmedSpeakers = [
   },
 ];
 
-const placeholderCount = 4;
+const placeholderCount = 1;
 
 export function Speakers() {
   return (
