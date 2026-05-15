@@ -352,53 +352,6 @@ export function Theme() {
           </motion.div>
         </div>
 
-        {/* ── Profit flip callout ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          style={{
-            borderLeft: "3px solid #f5c518",
-            background: "rgba(245,197,24,0.025)",
-            padding: "48px 48px",
-            borderTop: "1px solid rgba(244,243,239,0.06)",
-            marginBottom: 1,
-          }}
-        >
-          <div
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: 10,
-              fontWeight: 700,
-              color: "#f5c518",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-              marginBottom: 24,
-              opacity: 0.8,
-            }}
-          >
-            ✦ &nbsp; But flip the number
-          </div>
-          <p
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "clamp(14px, 1.6vw, 18px)",
-              color: "#f4f3ef",
-              opacity: 0.7,
-              lineHeight: 1.85,
-              maxWidth: 820,
-              marginBottom: 20,
-            }}
-          >
-            For a global giant, "innovation" isn't a flashy new feature. It's a{" "}
-            <span style={{ color: "#f5c518", opacity: 1, fontWeight: 600 }}>
-              0.1% improvement in latency, conversion, or AI accuracy
-            </span>{" "}
-            — and that 0.1% lift, across billions of touchpoints, is worth more than a 50% lift for a tiny startup.
-          </p>
-        </motion.div>
-
         {/* ── Central question ── */}
         <motion.div
           initial={{ opacity: 0, y: 36 }}
