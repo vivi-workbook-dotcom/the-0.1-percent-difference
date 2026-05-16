@@ -1,9 +1,7 @@
 import { MapPin, Clock, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
-// TODO: Replace with actual T HUB photo if available
-const VENUE_PHOTO =
-  "https://images.unsplash.com/photo-1552925766-63ab07391e02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+const VENUE_PHOTO = "/stage.png";
 
 export function Venue() {
   return (

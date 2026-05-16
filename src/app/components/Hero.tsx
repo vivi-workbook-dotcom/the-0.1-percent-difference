@@ -86,7 +86,7 @@ export function Hero() {
             opacity: 0.12,
           }}
         >
-          20
+          7
         </div>
         <div
           style={{
@@ -265,7 +265,7 @@ export function Hero() {
             }}
           >
             {[
-              { label: "Date", value: "July 7, 2026 (Tentative)" },
+              { label: "Date", value: "July 7, 2026" },
               { label: "Time", value: "5:00 PM – 8:00 PM" },
               { label: "Venue", value: "T HUB, Hyderabad" },
             ].map((item, i) => (
