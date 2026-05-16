@@ -100,7 +100,7 @@ export function Hero() {
             marginTop: 4,
           }}
         >
-          June 2026
+          July 2026
         </div>
       </motion.div>
 
@@ -265,7 +265,7 @@ export function Hero() {
             }}
           >
             {[
-              { label: "Date", value: "June 20, 2026 (Tentative)" },
+              { label: "Date", value: "July 7, 2026 (Tentative)" },
               { label: "Time", value: "5:00 PM – 8:00 PM" },
               { label: "Venue", value: "T HUB, Hyderabad" },
             ].map((item, i) => (
