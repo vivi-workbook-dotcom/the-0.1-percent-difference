@@ -109,7 +109,7 @@ export function Agenda() {
               letterSpacing: "0.05em",
             }}
           >
-            June 20, 2026 · 5 PM – 8 PM · T HUB, Hyderabad
+            July 7, 2026 · 5 PM – 8 PM · T HUB, Hyderabad
           </p>
         </div>
 
