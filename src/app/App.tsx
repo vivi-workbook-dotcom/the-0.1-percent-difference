@@ -149,8 +149,8 @@ export default function App() {
       <Hero />
       <Speakers />
       <Theme />
-      <WhoShouldAttend />
       <Agenda />
+      <WhoShouldAttend />
       <PastEvents />
       <Organizer />
       <PodcastStills />
