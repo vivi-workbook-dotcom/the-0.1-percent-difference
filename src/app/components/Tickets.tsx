@@ -7,21 +7,18 @@ const tiers = [
   {
     name: "Early Bird",
     price: "₹799",
-    seats: "First 50 tickets",
     validity: "Valid until June 1",
     active: true,
   },
   {
     name: "General Admission",
     price: "₹999",
-    seats: "Next 100 tickets",
     validity: "Valid until June 23",
     active: false,
   },
   {
     name: "Final Batch",
     price: "₹1,499",
-    seats: "Last 50 tickets",
     validity: null,
     active: false,
   },
@@ -118,7 +115,7 @@ export function Tickets() {
               letterSpacing: "0.04em",
             }}
           >
-            200 seats total · July 7, 2026 · T HUB, Hyderabad
+            Limited seats available · July 7, 2026 · T HUB, Hyderabad
           </div>
         </motion.div>
 
@@ -254,25 +251,21 @@ export function Tickets() {
                   </span>
                 </div>
 
-                {/* Seats + validity */}
+                {/* Validity */}
                 <div style={{ marginBottom: 28 }}>
-                  <div
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontSize: 11,
-                      color: "#f4f3ef",
-                      opacity: 0.35,
-                      lineHeight: 1.7,
-                    }}
-                  >
-                    {tier.seats}
-                    {tier.validity && (
-                      <>
-                        <br />
-                        {tier.validity}
-                      </>
-                    )}
-                  </div>
+                  {tier.validity && (
+                    <div
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontSize: 11,
+                        color: "#f4f3ef",
+                        opacity: 0.35,
+                        lineHeight: 1.7,
+                      }}
+                    >
+                      {tier.validity}
+                    </div>
+                  )}
                 </div>
 
                 <div style={{ flex: 1 }} />
