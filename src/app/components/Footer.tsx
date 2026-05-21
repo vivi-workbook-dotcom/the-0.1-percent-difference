@@ -293,17 +293,6 @@ export function Footer() {
           © 2026 The Product Street. All rights reserved.
         </p>
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <p
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: 11,
-              color: "#f4f3ef",
-              opacity: 0.2,
-              margin: 0,
-            }}
-          >
-            Event organized by VethaVarshini · Hyderabad, India
-          </p>
           <button
             onClick={() => setShowTerms(true)}
             style={{
