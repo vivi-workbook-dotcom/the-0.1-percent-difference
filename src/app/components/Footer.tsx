@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Youtube, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
+import { TermsModal } from "./TermsModal";
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -32,6 +34,8 @@ const socials = [
 ];
 
 export function Footer() {
+  const [showTerms, setShowTerms] = useState(false);
+
   return (
     <footer
       style={{
@@ -288,17 +292,42 @@ export function Footer() {
         >
           © 2026 The Product Street. All rights reserved.
         </p>
-        <p
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: 11,
-            color: "#f4f3ef",
-            opacity: 0.2,
-          }}
-        >
-          Event organized by VethaVarshini · Hyderabad, India
-        </p>
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <p
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontSize: 11,
+              color: "#f4f3ef",
+              opacity: 0.2,
+              margin: 0,
+            }}
+          >
+            Event organized by VethaVarshini · Hyderabad, India
+          </p>
+          <button
+            onClick={() => setShowTerms(true)}
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontSize: 11,
+              color: "#f4f3ef",
+              opacity: 0.2,
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+              textDecoration: "underline",
+              textUnderlineOffset: 3,
+              transition: "opacity 0.2s ease",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.6")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.2")}
+          >
+            Terms & Conditions
+          </button>
+        </div>
       </div>
+
+      {showTerms && <TermsModal onClose={() => setShowTerms(false)} />}
     </footer>
   );
 }
