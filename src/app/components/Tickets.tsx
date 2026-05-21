@@ -1,14 +1,31 @@
-import { Check, ArrowUpRight, Clock } from "lucide-react";
+import { Check, ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
-// ─── CONFIG FLAGS ──────────────────────────────────────────────────────────────
-// Set TICKETS_ENABLED to true when you're ready to open registration publicly.
-// Until then, the section shows a "Registration opens soon" placeholder.
-const TICKETS_ENABLED = false;
+const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
 
-// Update this number whenever you adjust capacity.
-const SEAT_CAPACITY = 150;
-// ──────────────────────────────────────────────────────────────────────────────
+const tiers = [
+  {
+    name: "Early Bird",
+    price: "₹799",
+    seats: "First 50 tickets",
+    validity: "Valid until June 1",
+    active: true,
+  },
+  {
+    name: "General Admission",
+    price: "₹999",
+    seats: "Next 100 tickets",
+    validity: "Valid until June 23",
+    active: false,
+  },
+  {
+    name: "Final Batch",
+    price: "₹1,499",
+    seats: "Last 50 tickets",
+    validity: null,
+    active: false,
+  },
+];
 
 const includes = [
   "Full event access (5 PM – 8 PM)",
@@ -63,277 +80,248 @@ export function Tickets() {
           </span>
         </div>
 
-        {/* Two column: headline + card */}
-        <div
+        {/* Headline */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: 80,
-            alignItems: "center",
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 24,
+            marginBottom: 64,
           }}
         >
-          {/* Left: copy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          <h2
+            style={{
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "clamp(36px, 6vw, 80px)",
+              fontWeight: 900,
+              color: "#f4f3ef",
+              letterSpacing: "-0.03em",
+              lineHeight: 1,
+              margin: 0,
+            }}
           >
-            <h2
-              style={{
-                fontFamily: "Montserrat, sans-serif",
-                fontSize: "clamp(36px, 6vw, 80px)",
-                fontWeight: 900,
-                color: "#f4f3ef",
-                letterSpacing: "-0.03em",
-                lineHeight: 1,
-                marginBottom: 32,
-              }}
-            >
-              Grab your<br />seat before<br />
-              <span style={{ color: "#f6584b" }}>it's gone.</span>
-            </h2>
+            Grab your seat<br />
+            <span style={{ color: "#f6584b" }}>before it's gone.</span>
+          </h2>
+          <div
+            style={{
+              fontFamily: "Poppins, sans-serif",
+              fontSize: 13,
+              color: "#f4f3ef",
+              opacity: 0.35,
+              letterSpacing: "0.04em",
+            }}
+          >
+            200 seats total · July 7, 2026 · T HUB, Hyderabad
+          </div>
+        </motion.div>
 
-            <div
-              style={{
-                marginTop: 40,
-                padding: "24px 0",
-                borderTop: "1px solid rgba(244,243,239,0.07)",
-                borderBottom: "1px solid rgba(244,243,239,0.07)",
-              }}
-            >
-              <div
+        {/* What's included */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "10px 32px",
+            marginBottom: 64,
+            padding: "24px 0",
+            borderTop: "1px solid rgba(244,243,239,0.07)",
+            borderBottom: "1px solid rgba(244,243,239,0.07)",
+          }}
+        >
+          {includes.map((item, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+              <Check size={12} color="#f6584b" strokeWidth={3} />
+              <span
                 style={{
                   fontFamily: "Poppins, sans-serif",
-                  fontSize: 10,
-                  fontWeight: 600,
+                  fontSize: 12,
                   color: "#f4f3ef",
-                  opacity: 0.3,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  marginBottom: 8,
+                  opacity: 0.55,
                 }}
               >
-                Capacity
-              </div>
-              <div
-                style={{
-                  fontFamily: "Montserrat, sans-serif",
-                  fontSize: 32,
-                  fontWeight: 900,
-                  color: "#f4f3ef",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {SEAT_CAPACITY} <span style={{ fontSize: 16, fontWeight: 400, opacity: 0.4 }}>seats only</span>
-              </div>
+                {item}
+              </span>
             </div>
-          </motion.div>
+          ))}
+        </motion.div>
 
-          {/* Right: ticket card OR coming soon */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {TICKETS_ENABLED ? (
-              /* ── LIVE TICKET CARD ── */
-              <div className="ticket-shimmer-border">
-                <div style={{ position: "relative", overflow: "hidden" }}>
-                  <div style={{ height: 4, background: "#f6584b", width: "100%" }} />
-                  <div style={{ padding: "36px 36px 40px" }}>
-                    <div
-                      style={{
-                        fontFamily: "Poppins, sans-serif",
-                        fontSize: 10,
-                        fontWeight: 600,
-                        color: "#f6584b",
-                        letterSpacing: "0.25em",
-                        textTransform: "uppercase",
-                        marginBottom: 24,
-                      }}
-                    >
-                      General Admission
-                    </div>
-                    <div style={{ marginBottom: 32 }}>
-                      <span
-                        style={{
-                          fontFamily: "Montserrat, sans-serif",
-                          fontSize: 64,
-                          fontWeight: 900,
-                          color: "#f4f3ef",
-                          letterSpacing: "-0.04em",
-                          lineHeight: 1,
-                        }}
-                      >
-                        ₹1,200
-                      </span>
-                      <div
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontSize: 12,
-                          color: "#f4f3ef",
-                          opacity: 0.35,
-                          marginTop: 8,
-                          letterSpacing: "0.02em",
-                        }}
-                      >
-                        per person · inclusive of all sessions & networking
-                      </div>
-                    </div>
-                    <div style={{ height: 1, background: "rgba(244,243,239,0.07)", marginBottom: 28 }} />
-                    <div style={{ display: "flex", flexDirection: "column", gap: 14, marginBottom: 32 }}>
-                      {includes.map((item, i) => (
-                        <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                          <Check size={13} color="#f6584b" strokeWidth={3} />
-                          <span
-                            style={{
-                              fontFamily: "Poppins, sans-serif",
-                              fontSize: 13,
-                              color: "#f4f3ef",
-                              opacity: 0.65,
-                            }}
-                          >
-                            {item}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    <div style={{ height: 1, background: "rgba(244,243,239,0.07)", marginBottom: 28 }} />
-                    {/* TODO: replace href with real Razorpay Payment Link */}
-                    <a
-                      href="https://rzp.io/l/PLACEHOLDER"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-shine"
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        fontFamily: "Poppins, sans-serif",
-                        fontSize: 13,
-                        fontWeight: 700,
-                        color: "#000",
-                        background: "#f6584b",
-                        padding: "18px 24px",
-                        textDecoration: "none",
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
-                        transition: "all 0.2s ease",
-                        width: "100%",
-                        boxSizing: "border-box",
-                        position: "relative",
-                        overflow: "hidden",
-                      }}
-                      onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
-                      onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
-                    >
-                      Get Tickets
-                      <ArrowUpRight size={16} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              /* ── COMING SOON PLACEHOLDER ── */
+        {/* Tier cards */}
+        <div
+          className="tickets-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 24,
+          }}
+        >
+          {tiers.map((tier, i) => (
+            <motion.div
+              key={tier.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className={tier.active ? "ticket-shimmer-border" : undefined}
+              style={
+                tier.active
+                  ? undefined
+                  : { border: "1px solid rgba(244,243,239,0.08)" }
+              }
+            >
               <div
                 style={{
-                  border: "1px solid rgba(244,243,239,0.08)",
-                  padding: "52px 40px",
+                  background: "#060606",
+                  padding: "32px 28px 36px",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "flex-start",
-                  gap: 24,
+                  height: "100%",
+                  boxSizing: "border-box",
                   position: "relative",
-                  overflow: "hidden",
                 }}
               >
-                {/* Subtle top line */}
-                <div style={{ height: 1, background: "rgba(246,88,75,0.25)", width: "100%", position: "absolute", top: 0, left: 0 }} />
+                {tier.active && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 3,
+                      background: "#f6584b",
+                    }}
+                  />
+                )}
 
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
-                    background: "rgba(246,88,75,0.08)",
-                    border: "1px solid rgba(246,88,75,0.18)",
-                    padding: "8px 16px",
-                  }}
-                >
-                  <Clock size={12} color="#f6584b" strokeWidth={2.5} />
-                  <span
+                {/* Tier label */}
+                <div style={{ marginBottom: 20 }}>
+                  <div
                     style={{
                       fontFamily: "Poppins, sans-serif",
                       fontSize: 10,
                       fontWeight: 600,
-                      color: "#f6584b",
+                      color: tier.active ? "#f6584b" : "#f4f3ef",
+                      opacity: tier.active ? 1 : 0.35,
                       letterSpacing: "0.25em",
                       textTransform: "uppercase",
+                      marginBottom: tier.active ? 6 : 0,
                     }}
                   >
-                    Registration Opens Soon
+                    {tier.name}
+                  </div>
+                  {tier.active && (
+                    <div
+                      style={{
+                        display: "inline-block",
+                        background: "rgba(246,88,75,0.1)",
+                        border: "1px solid rgba(246,88,75,0.2)",
+                        padding: "2px 10px",
+                        fontFamily: "Poppins, sans-serif",
+                        fontSize: 9,
+                        fontWeight: 600,
+                        color: "#f6584b",
+                        letterSpacing: "0.15em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Now Open
+                    </div>
+                  )}
+                </div>
+
+                {/* Price */}
+                <div style={{ marginBottom: 8 }}>
+                  <span
+                    style={{
+                      fontFamily: "Montserrat, sans-serif",
+                      fontSize: "clamp(36px, 4vw, 52px)",
+                      fontWeight: 900,
+                      color: "#f4f3ef",
+                      letterSpacing: "-0.04em",
+                      lineHeight: 1,
+                    }}
+                  >
+                    {tier.price}
                   </span>
                 </div>
 
-                <p
-                  style={{
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: "clamp(22px, 3vw, 32px)",
-                    fontWeight: 800,
-                    color: "#f4f3ef",
-                    letterSpacing: "-0.02em",
-                    lineHeight: 1.2,
-                    margin: 0,
-                  }}
-                >
-                  Tickets drop once the lineup is locked.
-                </p>
+                {/* Seats + validity */}
+                <div style={{ marginBottom: 28 }}>
+                  <div
+                    style={{
+                      fontFamily: "Poppins, sans-serif",
+                      fontSize: 11,
+                      color: "#f4f3ef",
+                      opacity: 0.35,
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {tier.seats}
+                    {tier.validity && (
+                      <>
+                        <br />
+                        {tier.validity}
+                      </>
+                    )}
+                  </div>
+                </div>
 
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: 13,
-                    color: "#f4f3ef",
-                    opacity: 0.35,
-                    lineHeight: 1.8,
-                    margin: 0,
-                    maxWidth: 340,
-                  }}
-                >
-                  We're curating the room before opening the doors. Follow The Product Street on Instagram to know the moment registration goes live.
-                </p>
+                <div style={{ flex: 1 }} />
 
-                <div style={{ height: 1, background: "rgba(244,243,239,0.06)", width: "100%" }} />
-
+                {/* CTA */}
                 <a
-                  href="https://www.instagram.com/theproductstreet"
+                  href={RAZORPAY_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className={tier.active ? "btn-shine" : undefined}
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: 10,
+                    justifyContent: "space-between",
                     fontFamily: "Poppins, sans-serif",
                     fontSize: 12,
-                    fontWeight: 600,
-                    color: "#f4f3ef",
-                    opacity: 0.5,
+                    fontWeight: 700,
+                    color: tier.active ? "#000" : "#f4f3ef",
+                    background: tier.active ? "#f6584b" : "transparent",
+                    border: tier.active ? "none" : "1px solid rgba(244,243,239,0.15)",
+                    padding: "14px 20px",
                     textDecoration: "none",
-                    letterSpacing: "0.06em",
+                    letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    transition: "opacity 0.2s ease",
+                    transition: "all 0.2s ease",
+                    position: "relative",
+                    overflow: "hidden",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.5")}
+                  onMouseEnter={e => {
+                    if (tier.active) {
+                      e.currentTarget.style.background = "#e04e3d";
+                    } else {
+                      e.currentTarget.style.borderColor = "rgba(244,243,239,0.4)";
+                    }
+                  }}
+                  onMouseLeave={e => {
+                    if (tier.active) {
+                      e.currentTarget.style.background = "#f6584b";
+                    } else {
+                      e.currentTarget.style.borderColor = "rgba(244,243,239,0.15)";
+                    }
+                  }}
                 >
-                  Follow on Instagram
+                  Get Tickets
                   <ArrowUpRight size={14} />
                 </a>
               </div>
-            )}
-          </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
