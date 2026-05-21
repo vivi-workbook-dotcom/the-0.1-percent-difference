@@ -4,16 +4,18 @@ const items = [
   {
     time: "5:00 PM",
     tag: "Opening",
-    title: "Welcome & Keynote",
+    title: "Welcome",
     desc: "Opening remarks and scene-setting by host. Why this conversation matters right now.",
     duration: "20 min",
+    speakers: [{ name: "VethaVarshini", role: "Host" }],
   },
   {
     time: "5:20 PM",
     tag: "Interview",
-    title: "Live Interview",
-    desc: "A sit-down conversation between the host and a featured guest on the 0.1% difference.",
+    title: "Building at the Frontier",
+    desc: "A sit-down conversation on design, AI, and what it means to build products at the edge of what's possible.",
     duration: "30 min",
+    speakers: [{ name: "Varun Ande", role: "Head of Design · Sarvam.ai" }],
   },
   {
     time: "5:50 PM",
@@ -21,13 +23,19 @@ const items = [
     title: "Lightning Talk",
     desc: "One speaker. One sharp idea. 20–30 minutes to change how you see your work.",
     duration: "20–30 min",
+    speakers: [{ name: "Mahuya Ghosh", role: "Director & AI Strategist · Dell" }],
   },
   {
     time: "6:20 PM",
     tag: "Panel",
     title: "Fireside Chat",
-    desc: "2–3 speakers. No slides. Moderated conversation on the tensions, trade-offs, and truths of the startup-legacy intersection.",
+    desc: "No slides. Moderated conversation on the tensions, trade-offs, and truths of the startup-legacy intersection.",
     duration: "40 min",
+    speakers: [
+      { name: "Sanjay Mandava", role: "CEO · Landeed (YC S22)" },
+      { name: "Saurav Basu", role: "Head of AI Labs · ADP India" },
+      { name: "TBC", role: "" },
+    ],
   },
   {
     time: "7:00 PM",
@@ -35,6 +43,7 @@ const items = [
     title: "Curated Networking",
     desc: "Not a chaotic mixer. A structured wind-down where conversations go deeper.",
     duration: "60 min",
+    speakers: [],
   },
   {
     time: "8:00 PM",
@@ -42,6 +51,7 @@ const items = [
     title: "Close",
     desc: "See you on the other side.",
     duration: "",
+    speakers: [],
   },
 ];
 
@@ -194,7 +204,7 @@ export function Agenda() {
               {item.tag}
             </span>
 
-            {/* Title + desc */}
+            {/* Title + desc + speakers */}
             <div>
               <div
                 style={{
@@ -220,6 +230,53 @@ export function Agenda() {
               >
                 {item.desc}
               </div>
+              {item.speakers.length > 0 && (
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 12 }}>
+                  {item.speakers.map((s, si) => (
+                    <div
+                      key={si}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 6,
+                        background: s.name === "TBC"
+                          ? "rgba(244,243,239,0.04)"
+                          : "rgba(246,88,75,0.07)",
+                        border: s.name === "TBC"
+                          ? "1px solid rgba(244,243,239,0.1)"
+                          : "1px solid rgba(246,88,75,0.18)",
+                        padding: "4px 10px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: "Poppins, sans-serif",
+                          fontSize: 11,
+                          fontWeight: 600,
+                          color: s.name === "TBC" ? "#f4f3ef" : "#f6584b",
+                          opacity: s.name === "TBC" ? 0.3 : 1,
+                          letterSpacing: "0.02em",
+                        }}
+                      >
+                        {s.name}
+                      </span>
+                      {s.role && (
+                        <span
+                          style={{
+                            fontFamily: "Poppins, sans-serif",
+                            fontSize: 10,
+                            color: "#f4f3ef",
+                            opacity: 0.3,
+                            letterSpacing: "0.01em",
+                          }}
+                        >
+                          · {s.role}
+                        </span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Duration */}
