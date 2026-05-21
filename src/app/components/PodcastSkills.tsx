@@ -49,6 +49,7 @@ export function PodcastStills() {
     >
       {/* Section label */}
       <div
+        className="podcast-content"
         style={{
           padding: "0 40px",
           maxWidth: 1280,
@@ -199,6 +200,7 @@ export function PodcastStills() {
 
       {/* ── Topic Cloud ── */}
       <motion.div
+        className="podcast-content"
         initial={{ opacity: 0, y: 32 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}

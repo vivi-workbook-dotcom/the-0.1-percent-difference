@@ -140,6 +140,8 @@ export default function App() {
           .hero-ctas { width: 100% !important; flex-direction: column !important; }
           .hero-ctas a, .hero-ctas button { width: 100% !important; box-sizing: border-box !important; text-align: center !important; justify-content: center !important; }
           nav > div { padding-left: 20px !important; padding-right: 20px !important; }
+          /* Podcast section: zero inner padding so section's 20px is the only gap */
+          .podcast-content { padding-left: 0 !important; padding-right: 0 !important; }
         }
       `}</style>
 
