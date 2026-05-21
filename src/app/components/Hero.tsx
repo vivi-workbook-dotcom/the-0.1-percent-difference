@@ -310,7 +310,7 @@ export function Hero() {
           <div className="hero-ctas" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
             {/* TODO: replace href with real Razorpay Payment Link */}
             <a
-              href="https://rzp.io/l/PLACEHOLDER"
+              href="https://rzp.io/rzp/theproductstreet"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine"
