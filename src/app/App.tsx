@@ -153,10 +153,10 @@ export default function App() {
       <Agenda />
       <WhoShouldAttend />
       <PastEvents />
+      <Tickets />
       <Organizer />
       <PodcastStills />
       <Venue />
-      <Tickets />
       <Sponsor />
       <Footer />
     </div>
