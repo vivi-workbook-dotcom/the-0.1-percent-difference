@@ -6,18 +6,18 @@ const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
 const tiers = [
   {
     name: "Early Bird",
-    price: "₹799",
+    price: "₹899",
     validity: "Valid until June 1",
     active: true,
   },
   {
     name: "General Admission",
-    price: "₹999",
+    price: "₹1,199",
     validity: "Valid until June 23",
     active: false,
   },
   {
-    name: "Final Batch",
+    name: "On the Spot",
     price: "₹1,499",
     validity: null,
     active: false,
