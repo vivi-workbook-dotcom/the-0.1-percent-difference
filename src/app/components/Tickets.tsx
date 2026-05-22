@@ -25,11 +25,11 @@ const tiers = [
 ];
 
 const includes = [
-  "Full event access (5 PM – 8 PM)",
+  "Full summit access (5 PM – 8 PM)",
   "Welcome Keynote by VethaVarshini",
   "Live Interview, Lightning Talk & Fireside Chat",
   "Curated Networking Session",
-  "Event swag & refreshments",
+  "Summit swag & refreshments",
 ];
 
 export function Tickets() {

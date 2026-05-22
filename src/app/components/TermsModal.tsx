@@ -11,7 +11,7 @@ const sections = [
     body: [
       "All ticket sales are processed through Razorpay. By completing your purchase, you agree to these terms.",
       "You will receive a confirmation email with your ticket details within 24 hours of purchase. If you don't receive it, contact vetha.theproductstreet@gmail.com.",
-      "Tickets are non-transferable between pricing tiers (Early Bird, General Admission, Final Batch). However, you may transfer your ticket to another person by notifying us at least 48 hours before the event with their name and email address.",
+      "Tickets are non-transferable between pricing tiers (Early Bird, General Admission, Final Batch). However, you may transfer your ticket to another person by notifying us at least 48 hours before the summit with their name and email address.",
     ],
   },
   {
@@ -19,19 +19,19 @@ const sections = [
     body: [
       "All ticket sales are final. No refunds or cancellations will be issued under any circumstances, including no-shows.",
       "In the event of speaker cancellations or schedule changes, we will provide a replacement of comparable caliber. No refunds will be issued for such changes.",
-      "If the event is cancelled entirely by The Product Street, full refunds will be issued to all ticket holders.",
+      "If the summit is cancelled entirely by The Product Street, full refunds will be issued to all ticket holders.",
     ],
   },
   {
     title: "3. Age Restriction",
     body: [
-      "This event is open to individuals aged 18 and above. Valid government-issued ID may be required at entry.",
+      "This summit is open to individuals aged 18 and above. Valid government-issued ID may be required at entry.",
     ],
   },
   {
     title: "4. Photography & Media Consent",
     body: [
-      "By attending this event, you consent to being photographed, filmed, and recorded. Images, videos, and audio may be used for promotional purposes by The Product Street across social media, website, podcast, and other marketing channels.",
+      "By attending this summit, you consent to being photographed, filmed, and recorded. Images, videos, and audio may be used for promotional purposes by The Product Street across social media, website, podcast, and other marketing channels.",
       "If you do not wish to be photographed or filmed, please inform our volunteers at registration.",
     ],
   },
@@ -39,14 +39,14 @@ const sections = [
     title: "5. Code of Conduct",
     body: [
       "All attendees are expected to conduct themselves professionally and respectfully.",
-      "Harassment, discrimination, or disruptive behavior of any kind will not be tolerated and may result in immediate removal from the event without refund.",
+      "Harassment, discrimination, or disruptive behavior of any kind will not be tolerated and may result in immediate removal from the summit without refund.",
       "The Product Street reserves the right to deny entry or remove any attendee who violates this code of conduct.",
     ],
   },
   {
     title: "6. Liability Waiver",
     body: [
-      "The Product Street and T Hub are not liable for any injury, loss, or damage to personal belongings during the event.",
+      "The Product Street and T Hub are not liable for any injury, loss, or damage to personal belongings during the summit.",
       "Attendees participate at their own risk and are responsible for their own health and safety.",
     ],
   },
@@ -60,14 +60,14 @@ const sections = [
   {
     title: "8. Intellectual Property",
     body: [
-      "All content shared during the event (presentations, talks, panel discussions) is the intellectual property of the respective speakers and The Product Street.",
+      "All content shared during the summit (presentations, talks, panel discussions) is the intellectual property of the respective speakers and The Product Street.",
       "Recording, photographing, or reproducing any part of the presentations without prior written consent is strictly prohibited.",
     ],
   },
   {
-    title: "9. Event Changes",
+    title: "9. Summit Changes",
     body: [
-      "The Product Street reserves the right to modify the event schedule, format, speakers, or venue due to unforeseen circumstances. No refunds will be issued for such changes.",
+      "The Product Street reserves the right to modify the summit schedule, format, speakers, or venue due to unforeseen circumstances. No refunds will be issued for such changes.",
     ],
   },
   {

@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+
+const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -45,6 +48,40 @@ export function Navbar() {
             display: "block",
           }}
         />
+
+        {/* Get Tickets CTA */}
+        <a
+          href={RAZORPAY_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-shine"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            fontFamily: "Poppins, sans-serif",
+            fontSize: 12,
+            fontWeight: 700,
+            color: "#000",
+            background: "#f6584b",
+            padding: "10px 20px",
+            textDecoration: "none",
+            letterSpacing: "0.07em",
+            textTransform: "uppercase",
+            borderRadius: 2,
+            transition: "all 0.2s ease",
+            position: "relative",
+            overflow: "hidden",
+            opacity: scrolled ? 1 : 0,
+            pointerEvents: scrolled ? "auto" : "none",
+            transform: scrolled ? "translateY(0)" : "translateY(-4px)",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
+          onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
+        >
+          Get Tickets
+          <ArrowUpRight size={13} />
+        </a>
       </div>
     </nav>
   );

@@ -391,7 +391,7 @@ export function Theme() {
               marginTop: 36,
             }}
           >
-            The question this event is built to answer
+            The question this summit is built to answer
           </p>
         </motion.div>
 

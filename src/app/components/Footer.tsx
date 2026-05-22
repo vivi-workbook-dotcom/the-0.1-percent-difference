@@ -10,7 +10,7 @@ const navLinks = [
   { label: "Theme", id: "theme" },
   { label: "Agenda", id: "agenda" },
   { label: "Speakers", id: "speakers" },
-  { label: "Past Events", id: "past-events" },
+  { label: "Past Summits", id: "past-events" },
   { label: "Tickets", id: "tickets" },
   { label: "Become a Sponsor", id: "sponsor" },
 ];
