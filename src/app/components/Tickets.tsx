@@ -9,18 +9,21 @@ const tiers = [
     price: "₹899",
     validity: "Valid until June 1",
     active: true,
+    open: true,
   },
   {
     name: "General Admission",
     price: "₹1,199",
     validity: "Valid until June 23",
     active: false,
+    open: false,
   },
   {
     name: "On the Spot",
     price: "₹1,499",
     validity: null,
     active: false,
+    open: false,
   },
 ];
 
@@ -271,47 +274,57 @@ export function Tickets() {
                 <div style={{ flex: 1 }} />
 
                 {/* CTA */}
-                <a
-                  href={RAZORPAY_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={tier.active ? "btn-shine" : undefined}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    color: tier.active ? "#000" : "#f4f3ef",
-                    background: tier.active ? "#f6584b" : "transparent",
-                    border: tier.active ? "none" : "1px solid rgba(244,243,239,0.15)",
-                    padding: "14px 20px",
-                    textDecoration: "none",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    transition: "all 0.2s ease",
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                  onMouseEnter={e => {
-                    if (tier.active) {
-                      e.currentTarget.style.background = "#e04e3d";
-                    } else {
-                      e.currentTarget.style.borderColor = "rgba(244,243,239,0.4)";
-                    }
-                  }}
-                  onMouseLeave={e => {
-                    if (tier.active) {
-                      e.currentTarget.style.background = "#f6584b";
-                    } else {
-                      e.currentTarget.style.borderColor = "rgba(244,243,239,0.15)";
-                    }
-                  }}
-                >
-                  Get Tickets
-                  <ArrowUpRight size={14} />
-                </a>
+                {tier.open ? (
+                  <a
+                    href={RAZORPAY_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={tier.active ? "btn-shine" : undefined}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      fontFamily: "Poppins, sans-serif",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      color: tier.active ? "#000" : "#f4f3ef",
+                      background: tier.active ? "#f6584b" : "transparent",
+                      border: tier.active ? "none" : "1px solid rgba(244,243,239,0.15)",
+                      padding: "14px 20px",
+                      textDecoration: "none",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      transition: "all 0.2s ease",
+                      position: "relative",
+                      overflow: "hidden",
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
+                    onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
+                  >
+                    Get Tickets
+                    <ArrowUpRight size={14} />
+                  </a>
+                ) : (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontFamily: "Poppins, sans-serif",
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: "#f4f3ef",
+                      opacity: 0.2,
+                      border: "1px solid rgba(244,243,239,0.08)",
+                      padding: "14px 20px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      cursor: "default",
+                    }}
+                  >
+                    Not Yet Open
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
