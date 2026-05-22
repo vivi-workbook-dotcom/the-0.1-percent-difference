@@ -142,7 +142,7 @@ export function WhoShouldAttend() {
               alignSelf: "flex-end",
             }}
           >
-            We're bringing together 100 people navigating the intersection of startup thinking and enterprise reality.
+            We're bringing together people navigating the intersection of startup thinking and enterprise reality.
           </motion.p>
         </div>
 
