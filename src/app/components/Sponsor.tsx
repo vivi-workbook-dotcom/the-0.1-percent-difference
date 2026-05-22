@@ -5,7 +5,7 @@ const valueProps = [
   {
     num: "01",
     title: "High-intent audience",
-    body: "Direct access to 100 senior product thinkers, operators, and founders — not a general-audience crowd.",
+    body: "Direct access to senior product thinkers, operators, and founders — not a general-audience crowd.",
   },
   {
     num: "02",
@@ -102,7 +102,7 @@ export function Sponsor() {
                 marginBottom: 48,
               }}
             >
-              100 carefully curated product thinkers, operators, and innovators in one room. If your brand belongs in that conversation, let's talk.
+              A carefully curated room of product thinkers, operators, and innovators. If your brand belongs in that conversation, let's talk.
             </p>
 
             {/* Tiers */}
