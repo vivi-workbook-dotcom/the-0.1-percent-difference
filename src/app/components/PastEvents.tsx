@@ -82,7 +82,7 @@ export function PastEvents() {
                   textTransform: "uppercase",
                 }}
               >
-                Past Events
+                Past Summits
               </span>
             </div>
             <motion.h2

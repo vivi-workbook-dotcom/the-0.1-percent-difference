@@ -10,7 +10,7 @@ const valueProps = [
   {
     num: "02",
     title: "Multi-channel visibility",
-    body: "Brand presence across the event itself, social media amplification, and The Product Street podcast.",
+    body: "Brand presence across the summit itself, social media amplification, and The Product Street podcast.",
   },
   {
     num: "03",
