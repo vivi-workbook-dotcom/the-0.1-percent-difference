@@ -83,7 +83,8 @@ export default function App() {
         }
 
         @media (max-width: 768px) {
-          .footer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px 24px !important; }
+          .footer-grid > div:first-child { grid-column: 1 / -1 !important; }
           section { padding-top: 80px !important; padding-bottom: 80px !important; }
           .past-events-grid {
             grid-template-columns: repeat(2, 1fr) !important;
