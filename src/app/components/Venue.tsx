@@ -119,8 +119,9 @@ export function Venue() {
                     lineHeight: 1.65,
                   }}
                 >
-                  T HUB Phase 2, IIT Hyderabad Campus<br />
-                  Kandi, Sangareddy, Telangana
+                  T-Hub Phase 2, 20, Inorbit Mall Rd<br />
+                  Vittal Rao Nagar, Madhapur
+                  Hyderabad, Telangana 500032
                 </p>
               </div>
             </div>
@@ -185,7 +186,7 @@ export function Venue() {
           </div>
 
           <a
-            href="https://maps.google.com/?q=T+HUB+Hyderabad"
+            href="https://maps.app.goo.gl/tUZjTwQ2Uaf6ZSZf6"
             target="_blank"
             rel="noopener noreferrer"
             style={{
