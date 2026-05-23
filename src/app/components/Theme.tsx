@@ -89,8 +89,8 @@ export function Theme() {
             maxWidth: 700,
           }}
         >
-          What does<br />
-          <span style={{ color: "#f6584b" }}>'0.1%'</span> mean?
+          The 0.1% difference<br />
+          <span style={{ color: "#f6584b" }}>is velocity.</span>
         </motion.h2>
 
         {isMobile && <div style={{ marginTop: 24, marginBottom: 8 }}>{description}</div>}
@@ -111,9 +111,10 @@ export function Theme() {
             marginBottom: 80,
           }}
         >
-          The AI revolution rewards speed. Startups iterate in days, "fail fast," and out-innovate
-          everyone. But legacy giants don't have the luxury of failing fast. And yet they have
-          no choice but to catch up.
+          In the AI era, the gap between good and great isn't strategy — it's speed.
+          Startups ship in days. But enterprises can't afford to fail fast.
+          The 0.1% who get it right have found a way to move at startup velocity
+          without putting everything at risk.
         </motion.p>
 
         {/* ── Tension divider ── */}
