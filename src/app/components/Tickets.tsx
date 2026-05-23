@@ -7,13 +7,17 @@ const tiers = [
   {
     name: "Early Bird",
     price: "₹899",
-    validity: "Valid until June 1",
+    badge: "First 30 tickets only",
+    save: "Save ₹400 vs General Admission",
+    validity: null,
     active: true,
     open: true,
   },
   {
     name: "General Admission",
-    price: "₹1,199",
+    price: "₹1,299",
+    badge: null,
+    save: null,
     validity: null,
     active: false,
     open: false,
@@ -21,6 +25,8 @@ const tiers = [
   {
     name: "On the Spot",
     price: "₹1,499",
+    badge: null,
+    save: null,
     validity: null,
     active: false,
     open: false,
@@ -198,7 +204,7 @@ export function Tickets() {
                 </div>
 
                 {/* Price */}
-                <div style={{ marginBottom: 8 }}>
+                <div style={{ marginBottom: 4 }}>
                   <span
                     style={{
                       fontFamily: "Montserrat, sans-serif",
@@ -212,6 +218,34 @@ export function Tickets() {
                     {tier.price}
                   </span>
                 </div>
+
+                {/* Save delta */}
+                {tier.save && (
+                  <div style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "#f6584b",
+                    letterSpacing: "0.02em",
+                    marginBottom: 4,
+                  }}>
+                    {tier.save}
+                  </div>
+                )}
+
+                {/* Badge */}
+                {tier.badge && (
+                  <div style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 10,
+                    color: "#f4f3ef",
+                    opacity: 0.35,
+                    letterSpacing: "0.05em",
+                    marginBottom: 20,
+                  }}>
+                    {tier.badge}
+                  </div>
+                )}
 
                 {/* Validity */}
                 <div style={{ marginBottom: 28 }}>

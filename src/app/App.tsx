@@ -1,4 +1,5 @@
 import "./components/styles/fonts.css";
+import { AnnouncementBar } from "./components/AnnouncementBar";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
@@ -146,6 +147,7 @@ export default function App() {
         }
       `}</style>
 
+      <AnnouncementBar />
       <Navbar />
       <Hero />
       <Speakers />
