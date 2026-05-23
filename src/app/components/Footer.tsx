@@ -86,7 +86,7 @@ export function Footer() {
                 lineHeight: 1.05,
               }}
             >
-              The 0.1% Difference.<br />
+              The Product Velocity Summit.<br />
               <span style={{ opacity: 0.35 }}>Are you in the room?</span>
             </h2>
           </div>

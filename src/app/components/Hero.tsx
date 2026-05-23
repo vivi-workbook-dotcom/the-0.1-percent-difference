@@ -210,17 +210,12 @@ export function Hero() {
               maxWidth: "90%",
             }}
           >
-            <span style={{ opacity: 0.55 }}>The </span>
-            <span
-              style={{
-                color: "#f6584b",
-                textShadow: "0 0 80px rgba(246,88,75,0.25)",
-              }}
-            >
-              0.1%
-            </span>
+            <span style={{ opacity: 0.45, fontWeight: 500 }}>The</span>
             <br />
-            Difference
+            <span style={{ color: "#f4f3ef" }}>Product </span>
+            <span style={{ color: "#f6584b", textShadow: "0 0 80px rgba(246,88,75,0.25)" }}>Velocity</span>
+            <br />
+            Summit
           </h1>
 
           <p
@@ -235,7 +230,7 @@ export function Hero() {
               marginBottom: 0,
             }}
           >
-            Startup Mindset in a Legacy World
+            Startup speed at enterprise scale in the AI era
           </p>
         </motion.div>
 

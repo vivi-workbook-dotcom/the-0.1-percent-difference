@@ -144,7 +144,7 @@ export function TermsModal({ onClose }: Props) {
                 marginBottom: 8,
               }}
             >
-              The 0.1% Difference Summit
+              The Product Velocity Summit
             </div>
             <h2
               style={{
