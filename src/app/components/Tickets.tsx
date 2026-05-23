@@ -1,4 +1,4 @@
-import { Check, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
 const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
@@ -25,14 +25,6 @@ const tiers = [
     active: false,
     open: false,
   },
-];
-
-const includes = [
-  "Full summit access (5 PM – 8 PM)",
-  "Welcome Keynote by VethaVarshini",
-  "Live Interview, Lightning Talk & Fireside Chat",
-  "Curated Networking Session",
-  "Summit swag & refreshments",
 ];
 
 export function Tickets() {
@@ -120,39 +112,6 @@ export function Tickets() {
           >
             Limited seats available · July 7, 2026 · T HUB, Hyderabad
           </div>
-        </motion.div>
-
-        {/* What's included */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px 32px",
-            marginBottom: 64,
-            padding: "24px 0",
-            borderTop: "1px solid rgba(244,243,239,0.07)",
-            borderBottom: "1px solid rgba(244,243,239,0.07)",
-          }}
-        >
-          {includes.map((item, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-              <Check size={12} color="#f6584b" strokeWidth={3} />
-              <span
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: 12,
-                  color: "#f4f3ef",
-                  opacity: 0.55,
-                }}
-              >
-                {item}
-              </span>
-            </div>
-          ))}
         </motion.div>
 
         {/* Tier cards */}
