@@ -14,7 +14,7 @@ const tiers = [
   {
     name: "General Admission",
     price: "₹1,199",
-    validity: "Valid until June 23",
+    validity: null,
     active: false,
     open: false,
   },
