@@ -201,7 +201,7 @@ export function Hero() {
           <h1
             style={{
               fontFamily: "Montserrat, sans-serif",
-              fontSize: "clamp(52px, 10vw, 140px)",
+              fontSize: "clamp(40px, 6.5vw, 86px)",
               fontWeight: 900,
               color: "#f4f3ef",
               lineHeight: 0.92,
