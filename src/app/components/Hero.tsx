@@ -16,6 +16,7 @@ export function Hero() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
+        paddingTop: 114,
         paddingBottom: 80,
       }}
     >
