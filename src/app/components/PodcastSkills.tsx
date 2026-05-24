@@ -1,12 +1,9 @@
 import { motion } from "motion/react";
 
-// TODO: Replace these with your actual podcast photos.
-// Drop 12 landscape (16:9) images into /public/ named photo-1.jpg through photo-12.jpg
-// They will auto-populate the strip below.
-const PHOTO_COUNT = 12;
+const PHOTO_COUNT = 8;
 const photos = Array.from({ length: PHOTO_COUNT }, (_, i) => ({
   id: i + 1,
-  src: `/photo-${i + 1}.jpg`,
+  src: `/podcast-${i + 1}.png`,
   alt: `The Product Street — Episode Still ${i + 1}`,
 }));
 
