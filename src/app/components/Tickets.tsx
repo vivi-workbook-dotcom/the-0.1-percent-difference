@@ -116,7 +116,7 @@ export function Tickets() {
               letterSpacing: "0.04em",
             }}
           >
-            Limited seats available · July 7, 2026 · T HUB, Hyderabad
+            Limited seats available · July 4, 2026 · T HUB, Hyderabad
           </div>
         </motion.div>
 

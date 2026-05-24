@@ -74,7 +74,7 @@ export function Footer() {
                 marginBottom: 12,
               }}
             >
-              July 7, 2026 · T HUB, Hyderabad
+              July 4, 2026 · T HUB, Hyderabad
             </p>
             <h2
               style={{
