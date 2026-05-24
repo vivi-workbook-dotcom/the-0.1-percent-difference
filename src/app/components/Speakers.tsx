@@ -287,14 +287,14 @@ export function Speakers() {
                         justifyContent: "center",
                         width: 20,
                         height: 20,
-                        background: speaker.badge.bg,
+                        background: "#fff",
                         border: `1px solid ${speaker.badge.border}`,
-                        borderRadius: 3,
+                        borderRadius: 4,
                         textDecoration: "none",
                         opacity: 0.75,
                         transition: "opacity 0.2s ease",
                         flexShrink: 0,
-                        padding: 0,
+                        padding: 2,
                       }}
                       onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
                       onMouseLeave={e => (e.currentTarget.style.opacity = "0.75")}
