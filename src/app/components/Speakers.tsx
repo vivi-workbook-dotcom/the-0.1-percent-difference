@@ -10,7 +10,7 @@ const confirmedSpeakers = [
     photo: "/speaker-varun.jpg",
     linkedin: "https://www.linkedin.com/in/ande-varun-345888138/",
     bio: "Head of Design at Sarvam.ai — India's first full-stack AI platform. He's shaping how millions of Indians will experience AI in their own languages, making cutting-edge technology feel native rather than imported.",
-    badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "#0d0d0d", fg: "#fff", border: "rgba(255,255,255,0.15)" },
+    badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "transparent", fg: "#fff", border: "transparent", favicon: "https://www.google.com/s2/favicons?domain=sarvam.ai&sz=32" },
   },
   {
     name: "Mahuya Ghosh",
@@ -267,8 +267,8 @@ export function Speakers() {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        padding: "0 5px",
-                        height: 18,
+                        width: 20,
+                        height: 20,
                         background: speaker.badge.bg,
                         border: `1px solid ${speaker.badge.border}`,
                         borderRadius: 3,
@@ -276,19 +276,28 @@ export function Speakers() {
                         opacity: 0.75,
                         transition: "opacity 0.2s ease",
                         flexShrink: 0,
+                        padding: 0,
                       }}
                       onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
                       onMouseLeave={e => (e.currentTarget.style.opacity = "0.75")}
                     >
-                      <span style={{
-                        fontFamily: "Montserrat, sans-serif",
-                        fontSize: 8,
-                        fontWeight: 900,
-                        color: speaker.badge.fg,
-                        letterSpacing: "0.04em",
-                        lineHeight: 1,
-                        whiteSpace: "nowrap",
-                      }}>{speaker.badge.label}</span>
+                      {"favicon" in speaker.badge && speaker.badge.favicon ? (
+                        <img
+                          src={speaker.badge.favicon}
+                          alt={speaker.badge.label}
+                          style={{ width: 16, height: 16, display: "block" }}
+                        />
+                      ) : (
+                        <span style={{
+                          fontFamily: "Montserrat, sans-serif",
+                          fontSize: 8,
+                          fontWeight: 900,
+                          color: speaker.badge.fg,
+                          letterSpacing: "0.04em",
+                          lineHeight: 1,
+                          whiteSpace: "nowrap",
+                        }}>{speaker.badge.label}</span>
+                      )}
                     </a>
                   )}
                 </div>
