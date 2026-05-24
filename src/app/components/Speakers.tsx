@@ -287,7 +287,7 @@ export function Speakers() {
                         justifyContent: "center",
                         width: 20,
                         height: 20,
-                        background: "#fff",
+                        background: speaker.badge.bg,
                         border: `1px solid ${speaker.badge.border}`,
                         borderRadius: 4,
                         textDecoration: "none",
