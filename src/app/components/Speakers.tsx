@@ -10,6 +10,7 @@ const confirmedSpeakers = [
     photo: "/speaker-varun.jpg",
     linkedin: "https://www.linkedin.com/in/ande-varun-345888138/",
     bio: "Head of Design at Sarvam.ai — India's first full-stack AI platform. He's shaping how millions of Indians will experience AI in their own languages, making cutting-edge technology feel native rather than imported.",
+    badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "#0d0d0d", fg: "#fff", border: "rgba(255,255,255,0.15)" },
   },
   {
     name: "Mahuya Ghosh",
@@ -26,7 +27,7 @@ const confirmedSpeakers = [
     photo: "/speaker-sanjay.jpg",
     linkedin: "https://www.linkedin.com/in/sanjay-mandava-%F0%9F%A6%88-2066aa24/",
     bio: "2x YC-backed founder — GoLorry and now Landeed. Before startups, he traded at investment management firms. Today he's building India's fastest property title search engine, with ambitions to expand across the developing world.",
-    ycLink: "https://www.ycombinator.com/companies/landeed",
+    badge: { label: "YC", href: "https://www.ycombinator.com/companies/landeed", bg: "#FF6600", fg: "#fff", border: "transparent" },
   },
   {
     name: "Saurav Basu",
@@ -256,37 +257,38 @@ export function Speakers() {
                   >
                     <Linkedin size={15} />
                   </a>
-                  {"ycLink" in speaker && speaker.ycLink && (
+                  {"badge" in speaker && speaker.badge && (
                     <a
-                      href={speaker.ycLink}
+                      href={speaker.badge.href}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={e => e.stopPropagation()}
-                      title="Y Combinator"
                       style={{
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        width: 18,
+                        padding: "0 5px",
                         height: 18,
-                        background: "#FF6600",
+                        background: speaker.badge.bg,
+                        border: `1px solid ${speaker.badge.border}`,
                         borderRadius: 3,
                         textDecoration: "none",
-                        opacity: 0.7,
+                        opacity: 0.75,
                         transition: "opacity 0.2s ease",
                         flexShrink: 0,
                       }}
                       onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                      onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
+                      onMouseLeave={e => (e.currentTarget.style.opacity = "0.75")}
                     >
                       <span style={{
                         fontFamily: "Montserrat, sans-serif",
-                        fontSize: 9,
+                        fontSize: 8,
                         fontWeight: 900,
-                        color: "#fff",
-                        letterSpacing: "-0.02em",
+                        color: speaker.badge.fg,
+                        letterSpacing: "0.04em",
                         lineHeight: 1,
-                      }}>YC</span>
+                        whiteSpace: "nowrap",
+                      }}>{speaker.badge.label}</span>
                     </a>
                   )}
                 </div>
