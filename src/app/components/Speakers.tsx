@@ -246,13 +246,13 @@ export function Speakers() {
                     rel="noopener noreferrer"
                     onClick={e => e.stopPropagation()}
                     style={{
-                      color: "#f4f3ef",
-                      opacity: 0.25,
+                      color: "#0A66C2",
+                      opacity: 0.6,
                       transition: "opacity 0.2s ease",
                       marginTop: 2,
                     }}
                     onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                    onMouseLeave={e => (e.currentTarget.style.opacity = "0.25")}
+                    onMouseLeave={e => (e.currentTarget.style.opacity = "0.6")}
                   >
                     <Linkedin size={15} />
                   </a>
