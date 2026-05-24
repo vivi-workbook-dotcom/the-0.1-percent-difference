@@ -149,9 +149,9 @@ export default function App() {
       <Speakers />
       <Theme />
       <Agenda />
+      <Tickets />
       <WhoShouldAttend />
       <PastEvents />
-      <Tickets />
       <Organizer />
       <PodcastStills />
       <Venue />
