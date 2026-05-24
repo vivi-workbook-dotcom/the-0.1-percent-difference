@@ -151,7 +151,7 @@ export function Venue() {
                     lineHeight: 1.65,
                   }}
                 >
-                  5:00 PM
+                  4:00 PM
                 </p>
               </div>
             </div>
