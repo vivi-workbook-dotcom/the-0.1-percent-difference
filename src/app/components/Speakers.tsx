@@ -94,7 +94,7 @@ export function Speakers() {
                 lineHeight: 1,
               }}
             >
-              The voices<br />in the room
+              Who's speaking
             </motion.h2>
           </div>
 
