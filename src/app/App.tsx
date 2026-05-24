@@ -155,7 +155,7 @@ export default function App() {
       <Organizer />
       <PodcastStills />
       <Venue />
-      <Sponsor />
+      {/* <Sponsor /> */}
       <Footer />
     </div>
   );
