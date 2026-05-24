@@ -123,7 +123,7 @@ export function Organizer() {
                 marginBottom: 28,
               }}
             >
-              Host · The Product Street
+              Creator · The Product Street
             </div>
 
             <h2
