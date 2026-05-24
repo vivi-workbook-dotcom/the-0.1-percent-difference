@@ -26,6 +26,7 @@ const confirmedSpeakers = [
     photo: "/speaker-sanjay.jpg",
     linkedin: "https://www.linkedin.com/in/sanjay-mandava-%F0%9F%A6%88-2066aa24/",
     bio: "2x YC-backed founder — GoLorry and now Landeed. Before startups, he traded at investment management firms. Today he's building India's fastest property title search engine, with ambitions to expand across the developing world.",
+    ycLink: "https://www.ycombinator.com/companies/landeed",
   },
   {
     name: "Saurav Basu",
@@ -238,23 +239,57 @@ export function Speakers() {
                   </div>
                 </div>
 
-                <a
-                  href={speaker.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={e => e.stopPropagation()}
-                  style={{
-                    color: "#f4f3ef",
-                    opacity: 0.25,
-                    transition: "opacity 0.2s ease",
-                    flexShrink: 0,
-                    marginTop: 2,
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.25")}
-                >
-                  <Linkedin size={15} />
-                </a>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8, flexShrink: 0 }}>
+                  <a
+                    href={speaker.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={e => e.stopPropagation()}
+                    style={{
+                      color: "#f4f3ef",
+                      opacity: 0.25,
+                      transition: "opacity 0.2s ease",
+                      marginTop: 2,
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                    onMouseLeave={e => (e.currentTarget.style.opacity = "0.25")}
+                  >
+                    <Linkedin size={15} />
+                  </a>
+                  {"ycLink" in speaker && speaker.ycLink && (
+                    <a
+                      href={speaker.ycLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      title="Y Combinator"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: 18,
+                        height: 18,
+                        background: "#FF6600",
+                        borderRadius: 3,
+                        textDecoration: "none",
+                        opacity: 0.7,
+                        transition: "opacity 0.2s ease",
+                        flexShrink: 0,
+                      }}
+                      onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                      onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
+                    >
+                      <span style={{
+                        fontFamily: "Montserrat, sans-serif",
+                        fontSize: 9,
+                        fontWeight: 900,
+                        color: "#fff",
+                        letterSpacing: "-0.02em",
+                        lineHeight: 1,
+                      }}>YC</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
