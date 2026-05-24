@@ -1,10 +1,9 @@
 import { motion } from "motion/react";
 
-const PHOTO_COUNT = 8;
-const photos = Array.from({ length: PHOTO_COUNT }, (_, i) => ({
-  id: i + 1,
-  src: `/podcast-${i + 1}.png`,
-  alt: `The Product Street — Episode Still ${i + 1}`,
+const photos = [1, 2, 3, 5, 6, 7, 8].map((n) => ({
+  id: n,
+  src: `/podcast-${n}.png`,
+  alt: `The Product Street — Episode Still ${n}`,
 }));
 
 // Topics discussed on the podcast — varying visual weights
