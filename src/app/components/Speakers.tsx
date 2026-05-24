@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Linkedin, Lock } from "lucide-react";
+import { Linkedin, Lock, Globe } from "lucide-react";
 import { motion } from "motion/react";
 
 const confirmedSpeakers = [
@@ -18,6 +18,7 @@ const confirmedSpeakers = [
     company: "Dell",
     photo: "/speaker-mahuya.jpg",
     linkedin: "https://www.linkedin.com/in/mahuyaghosh/",
+    website: "https://www.mahuyaghosh.com/",
     bio: "18 years building B2B and SaaS platforms across global markets. She holds 10 US patents spanning AI-driven optimization and applied ML, and is co-author of Mystery to Mastery. Advisor to IIIT-H, IIM Jammu, and Product School — recognised by Indus OS and Woxsen University.",
   },
   {
@@ -257,6 +258,23 @@ export function Speakers() {
                   >
                     <Linkedin size={15} />
                   </a>
+                  {"website" in speaker && speaker.website && (
+                    <a
+                      href={speaker.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      style={{
+                        color: "#f4f3ef",
+                        opacity: 0.25,
+                        transition: "opacity 0.2s ease",
+                      }}
+                      onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                      onMouseLeave={e => (e.currentTarget.style.opacity = "0.25")}
+                    >
+                      <Globe size={15} />
+                    </a>
+                  )}
                   {"badge" in speaker && speaker.badge && (
                     <a
                       href={speaker.badge.href}
