@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const items = [
   {
-    time: "5:00 PM",
+    time: "4:30 PM",
     tag: "Opening",
     title: "Welcome",
     desc: "Opening remarks and scene-setting by host. Why this conversation matters right now.",
@@ -10,7 +10,7 @@ const items = [
     speakers: [{ name: "VethaVarshini", role: "Host" }],
   },
   {
-    time: "5:20 PM",
+    time: "4:50 PM",
     tag: "Interview",
     title: "Building at the Frontier",
     desc: "A sit-down conversation on design, AI, and what it means to build products at the edge of what's possible.",
@@ -18,7 +18,7 @@ const items = [
     speakers: [{ name: "Varun Ande", role: "Head of Design · Sarvam.ai" }],
   },
   {
-    time: "5:50 PM",
+    time: "5:20 PM",
     tag: "Talk",
     title: "Lightning Talk",
     desc: "One speaker. One sharp idea. 20–30 minutes to change how you see your work.",
@@ -26,7 +26,7 @@ const items = [
     speakers: [{ name: "Mahuya Ghosh", role: "Director & AI Strategist · Dell" }],
   },
   {
-    time: "6:20 PM",
+    time: "5:50 PM",
     tag: "Panel",
     title: "Fireside Chat",
     desc: "No slides. Moderated conversation on the tensions, trade-offs, and truths of the startup-legacy intersection.",
@@ -38,11 +38,11 @@ const items = [
     ],
   },
   {
-    time: "7:00 PM",
+    time: "6:30 PM",
     tag: "Network",
     title: "Curated Networking",
     desc: "Not a chaotic mixer. A structured wind-down where conversations go deeper.",
-    duration: "60 min",
+    duration: "90 min",
     speakers: [],
   },
   {
@@ -119,7 +119,7 @@ export function Agenda() {
               letterSpacing: "0.05em",
             }}
           >
-            July 4, 2026 · 5 PM – 8 PM · T HUB, Hyderabad
+            July 4, 2026 · 4:30 PM – 8:30 PM · T HUB, Hyderabad
           </p>
         </div>
 
