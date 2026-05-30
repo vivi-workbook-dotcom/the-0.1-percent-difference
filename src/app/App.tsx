@@ -152,7 +152,7 @@ export default function App() {
       <Tickets />
       <WhoShouldAttend />
       <PastEvents />
-      <Organizer />
+      {/* <Organizer /> — content moved to HostModal, triggered from footer */}
       <PodcastStills />
       <Venue />
       {/* <Sponsor /> */}

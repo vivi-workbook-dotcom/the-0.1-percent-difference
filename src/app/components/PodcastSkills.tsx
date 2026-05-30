@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
 const photos = [1, 2, 3, 5, 6, 7, 8].map((n) => ({
   id: n,
@@ -274,10 +275,60 @@ export function PodcastStills() {
           style={{
             marginTop: 64,
             height: 1,
-            background:
-              "linear-gradient(to right, rgba(246,88,75,0.4), rgba(244,243,239,0.06) 60%, transparent)",
+            background: "linear-gradient(to right, rgba(246,88,75,0.4), rgba(244,243,239,0.06) 60%, transparent)",
           }}
         />
+
+        {/* YouTube CTA */}
+        <div
+          style={{
+            marginTop: 48,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 24,
+          }}
+        >
+          <div>
+            <div style={{ fontFamily: "Poppins, sans-serif", fontSize: 11, fontWeight: 600, color: "#f4f3ef", opacity: 0.25, letterSpacing: "0.25em", textTransform: "uppercase", marginBottom: 10 }}>
+              Watch the show
+            </div>
+            <p style={{ fontFamily: "Montserrat, sans-serif", fontSize: "clamp(20px, 2.8vw, 32px)", fontWeight: 900, color: "#f4f3ef", letterSpacing: "-0.02em", lineHeight: 1.1 }}>
+              The Product Street<br />
+              <span style={{ color: "#f6584b" }}>is on YouTube.</span>
+            </p>
+          </div>
+          <a
+            href="https://youtube.com/@TheProductStreet"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-shine"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 10,
+              fontFamily: "Poppins, sans-serif",
+              fontSize: 12,
+              fontWeight: 700,
+              color: "#000",
+              background: "#f6584b",
+              padding: "14px 28px",
+              textDecoration: "none",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              flexShrink: 0,
+              position: "relative",
+              overflow: "hidden",
+              transition: "background 0.2s ease",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
+          >
+            Watch on YouTube
+            <ArrowUpRight size={14} />
+          </a>
+        </div>
       </motion.div>
     </section>
   );
