@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Youtube, Linkedin, Instagram, ArrowUpRight } from "lucide-react";
 import { TermsModal } from "./TermsModal";
+import { HostModal } from "./HostModal";
 
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -35,6 +36,7 @@ const socials = [
 
 export function Footer() {
   const [showTerms, setShowTerms] = useState(false);
+  const [showHost, setShowHost] = useState(false);
 
   return (
     <footer
@@ -268,6 +270,44 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Hosted by line */}
+      <div
+        style={{
+          maxWidth: 1280,
+          margin: "0 auto",
+          padding: "0 40px 24px",
+          display: "flex",
+          alignItems: "center",
+          gap: 16,
+          flexWrap: "wrap",
+        }}
+      >
+        <span style={{ fontFamily: "Poppins, sans-serif", fontSize: 12, color: "#f4f3ef", opacity: 0.25 }}>
+          Hosted by VethaVarshini · The Product Street
+        </span>
+        <button
+          onClick={() => setShowHost(true)}
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: 12,
+            color: "#f6584b",
+            opacity: 0.6,
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+            gap: 4,
+            transition: "opacity 0.2s ease",
+          }}
+          onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+          onMouseLeave={e => (e.currentTarget.style.opacity = "0.6")}
+        >
+          Meet your host →
+        </button>
+      </div>
+
       {/* Bottom bar */}
       <div
         className="footer-bottom"
@@ -317,6 +357,7 @@ export function Footer() {
       </div>
 
       {showTerms && <TermsModal onClose={() => setShowTerms(false)} />}
+      {showHost && <HostModal onClose={() => setShowHost(false)} />}
     </footer>
   );
 }
