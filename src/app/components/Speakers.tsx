@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Linkedin, Lock, Globe } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -44,6 +44,13 @@ const placeholderCount = 1;
 
 export function Speakers() {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handler);
+    return () => window.removeEventListener("resize", handler);
+  }, []);
 
   return (
     <section
@@ -143,8 +150,8 @@ export function Speakers() {
                 background: "#080808",
                 cursor: "pointer",
               }}
-              onMouseEnter={() => setActiveIdx(i)}
-              onMouseLeave={() => setActiveIdx(null)}
+              onMouseEnter={isMobile ? undefined : () => setActiveIdx(i)}
+              onMouseLeave={isMobile ? undefined : () => setActiveIdx(null)}
               onClick={() => setActiveIdx(activeIdx === i ? null : i)}
             >
               {/* Photo + bio overlay */}
@@ -378,7 +385,7 @@ export function Speakers() {
           marginTop: 20,
           textAlign: "right",
         }}>
-          Hover a card to learn more
+          {isMobile ? "Tap a card to learn more" : "Hover a card to learn more"}
         </p>
 
         {/* Announcement badge */}
