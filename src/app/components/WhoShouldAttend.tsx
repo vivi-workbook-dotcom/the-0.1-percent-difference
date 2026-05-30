@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const bubbles = [
   {
-    label: "Product\nManagers\nin large orgs",
+    label: "Product\nManagers",
     size: 210,
     border: "1.5px solid rgba(246,88,75,0.52)",
     bg: "radial-gradient(ellipse at 42% 38%, rgba(246,88,75,0.09) 0%, transparent 68%)",
