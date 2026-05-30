@@ -262,7 +262,7 @@ export function Hero() {
           >
             {[
               { label: "Date", value: "July 4, 2026 · Sat" },
-              { label: "Time", value: "5:00 PM – 8:00 PM" },
+              { label: "Time", value: "4:30 PM – 8:30 PM" },
               { label: "Venue", value: "T HUB, Hyderabad" },
             ].map((item, i) => (
               <div
