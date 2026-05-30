@@ -31,7 +31,7 @@ export function AnnouncementBar() {
         }}
       >
         ⚡ Early Bird — First 30 tickets at ₹899.
-        <span style={{ fontWeight: 400, opacity: 0.75 }}> Price goes up to ₹1,299 after.</span>
+        <span style={{ fontWeight: 400, opacity: 0.75 }}> Price goes up to ₹1,499 after.</span>
       </p>
       <a
         href={RAZORPAY_LINK}
