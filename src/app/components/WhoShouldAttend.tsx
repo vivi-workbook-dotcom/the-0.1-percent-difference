@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const bubbles = [
   {
-    label: "Product\nManagers",
+    label: "Engineering\nLeaders",
     size: 210,
     border: "1.5px solid rgba(246,88,75,0.52)",
     bg: "radial-gradient(ellipse at 42% 38%, rgba(246,88,75,0.09) 0%, transparent 68%)",
@@ -17,7 +17,7 @@ const bubbles = [
     delay: 0,
   },
   {
-    label: "Startup\nfounders\n& operators",
+    label: "Design\nLeaders",
     size: 234,
     border: "1.5px solid rgba(244,243,239,0.16)",
     bg: "radial-gradient(ellipse at 50% 42%, rgba(244,243,239,0.025) 0%, transparent 68%)",
@@ -31,12 +31,12 @@ const bubbles = [
     delay: 1.0,
   },
   {
-    label: "Innovation\nleads &\ntransformation\nchampions",
+    label: "Intrapreneurs",
     size: 274,
     border: "1.5px solid rgba(244,243,239,0.09)",
     bg: "radial-gradient(ellipse at 55% 45%, rgba(244,243,239,0.015) 0%, transparent 68%)",
     glow: "0 0 30px rgba(244,243,239,0.025)",
-    fontSize: 12,
+    fontSize: 14,
     top: 125,
     left: "64%",
     animateY: [0, -17, 0],
@@ -45,7 +45,7 @@ const bubbles = [
     delay: 0.4,
   },
   {
-    label: "Curious\nthinkers\n& builders",
+    label: "Product\nDesigners",
     size: 198,
     border: "1.5px solid rgba(245,197,24,0.48)",
     bg: "radial-gradient(ellipse at 46% 40%, rgba(245,197,24,0.07) 0%, transparent 68%)",
