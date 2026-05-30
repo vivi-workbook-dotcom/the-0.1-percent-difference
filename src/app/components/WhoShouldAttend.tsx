@@ -58,6 +58,34 @@ const bubbles = [
     duration: 5.8,
     delay: 1.5,
   },
+  {
+    label: "Startup\nfounders\n& operators",
+    size: 218,
+    border: "1.5px solid rgba(244,243,239,0.14)",
+    bg: "radial-gradient(ellipse at 50% 42%, rgba(244,243,239,0.022) 0%, transparent 68%)",
+    glow: "0 0 40px rgba(244,243,239,0.03)",
+    fontSize: 13,
+    top: 305,
+    left: "38%",
+    animateY: [0, -15, 0],
+    animateX: [0, 8, 0],
+    duration: 6.3,
+    delay: 0.8,
+  },
+  {
+    label: "Curious\nthinkers\n& builders",
+    size: 190,
+    border: "1.5px solid rgba(245,197,24,0.35)",
+    bg: "radial-gradient(ellipse at 46% 40%, rgba(245,197,24,0.055) 0%, transparent 68%)",
+    glow: "0 0 45px rgba(245,197,24,0.07)",
+    fontSize: 13,
+    top: 400,
+    left: "66%",
+    animateY: [0, 16, 0],
+    animateX: [0, -5, 0],
+    duration: 5.5,
+    delay: 2.0,
+  },
 ];
 
 export function WhoShouldAttend() {
@@ -150,7 +178,7 @@ export function WhoShouldAttend() {
         <div
           style={{
             position: "relative",
-            height: isMobile ? "auto" : 520,
+            height: isMobile ? "auto" : 640,
             display: isMobile ? "flex" : "block",
             flexWrap: isMobile ? "wrap" : undefined,
             gap: isMobile ? 20 : undefined,
