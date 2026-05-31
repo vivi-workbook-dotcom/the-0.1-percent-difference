@@ -4,6 +4,14 @@ import { motion } from "motion/react";
 
 const confirmedSpeakers = [
   {
+    name: "Deepak Menon",
+    title: "VP, Product Experiences",
+    company: "Microsoft",
+    photo: "/speaker-deepak.jpg",
+    website: "https://www.deepakmenon.com/",
+    bio: "",
+  },
+  {
     name: "Varun Ande",
     title: "Head of Design",
     company: "Sarvam.ai",
@@ -37,14 +45,6 @@ const confirmedSpeakers = [
     photo: "/speaker-saurav.jpg",
     linkedin: "https://www.linkedin.com/in/saurav-basu-276b4930/",
     bio: "Leads the AI Lab at ADP India, working to transform 100+ legacy products into an AI-native experience using Agentic AI. Previously at Microsoft, where he led ML for Bing ad recommendations. Before that, IBM Research — statistical machine learning and distributed optimisation.",
-  },
-  {
-    name: "Deepak Menon",
-    title: "VP, Product Experiences",
-    company: "Microsoft",
-    photo: "/speaker-deepak.jpg",
-    website: "https://www.deepakmenon.com/",
-    bio: "",
   },
 ];
 
