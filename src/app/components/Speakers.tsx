@@ -38,9 +38,17 @@ const confirmedSpeakers = [
     linkedin: "https://www.linkedin.com/in/saurav-basu-276b4930/",
     bio: "Leads the AI Lab at ADP India, working to transform 100+ legacy products into an AI-native experience using Agentic AI. Previously at Microsoft, where he led ML for Bing ad recommendations. Before that, IBM Research — statistical machine learning and distributed optimisation.",
   },
+  {
+    name: "Deepak Menon",
+    title: "VP, Product Experiences",
+    company: "Microsoft",
+    photo: "/speaker-deepak.jpg",
+    website: "https://www.deepakmenon.com/",
+    bio: "",
+  },
 ];
 
-const placeholderCount = 1;
+const placeholderCount = 0;
 
 export function Speakers() {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
@@ -181,7 +189,7 @@ export function Speakers() {
                     padding: "28px 24px",
                     display: "flex",
                     alignItems: "flex-end",
-                    transform: activeIdx === i ? "translateY(0)" : "translateY(100%)",
+                    transform: activeIdx === i && speaker.bio ? "translateY(0)" : "translateY(100%)",
                     transition: "transform 0.38s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
@@ -249,22 +257,24 @@ export function Speakers() {
                 </div>
 
                 <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 8, flexShrink: 0 }}>
-                  <a
-                    href={speaker.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={e => e.stopPropagation()}
-                    style={{
-                      color: "#0A66C2",
-                      opacity: 0.6,
-                      transition: "opacity 0.2s ease",
-                      marginTop: 2,
-                    }}
-                    onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                    onMouseLeave={e => (e.currentTarget.style.opacity = "0.6")}
-                  >
-                    <Linkedin size={15} />
-                  </a>
+                  {"linkedin" in speaker && speaker.linkedin && (
+                    <a
+                      href={speaker.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      style={{
+                        color: "#0A66C2",
+                        opacity: 0.6,
+                        transition: "opacity 0.2s ease",
+                        marginTop: 2,
+                      }}
+                      onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                      onMouseLeave={e => (e.currentTarget.style.opacity = "0.6")}
+                    >
+                      <Linkedin size={15} />
+                    </a>
+                  )}
                   {"website" in speaker && speaker.website && (
                     <a
                       href={speaker.website}
