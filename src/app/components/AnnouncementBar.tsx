@@ -30,7 +30,7 @@ export function AnnouncementBar() {
           margin: 0,
         }}
       >
-        🔥 Only 5 Early Bird tickets left at ₹899.
+        🔥 Only 3 Early Bird tickets left at ₹899.
         <span style={{ fontWeight: 400, opacity: 0.75 }}> Price goes up to ₹1,499 after.</span>
       </p>
       <a

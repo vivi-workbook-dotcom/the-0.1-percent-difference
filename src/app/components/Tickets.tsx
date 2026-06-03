@@ -7,7 +7,7 @@ const tiers = [
   {
     name: "Early Bird",
     price: "₹899",
-    badge: "⚠ Only 5 left",
+    badge: "⚠ Only 3 left",
     save: "Save ₹600 vs General Admission",
     validity: null,
     active: true,
