@@ -7,7 +7,7 @@ const tiers = [
   {
     name: "Early Bird",
     price: "₹899",
-    badge: "First 30 tickets only",
+    badge: "⚠ Only 5 left",
     save: "Save ₹600 vs General Admission",
     validity: null,
     active: true,
@@ -238,9 +238,10 @@ export function Tickets() {
                   <div style={{
                     fontFamily: "Poppins, sans-serif",
                     fontSize: 10,
-                    color: "#f4f3ef",
-                    opacity: 0.35,
-                    letterSpacing: "0.05em",
+                    fontWeight: 700,
+                    color: "#f6584b",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
                     marginBottom: 20,
                   }}>
                     {tier.badge}
