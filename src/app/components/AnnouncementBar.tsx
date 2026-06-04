@@ -30,8 +30,8 @@ export function AnnouncementBar() {
           margin: 0,
         }}
       >
-        🔥 Only 3 Early Bird tickets left at ₹899.
-        <span style={{ fontWeight: 400, opacity: 0.75 }}> Price goes up to ₹1,499 after.</span>
+        🎟 General Admission is now open — ₹1,499.
+        <span style={{ fontWeight: 400, opacity: 0.75 }}> Early Bird sold out.</span>
       </p>
       <a
         href={RAZORPAY_LINK}
@@ -53,7 +53,7 @@ export function AnnouncementBar() {
           whiteSpace: "nowrap",
         }}
       >
-        Get Early Bird
+        Get Tickets
         <ArrowUpRight size={12} />
       </a>
     </div>
