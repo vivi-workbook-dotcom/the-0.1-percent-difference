@@ -7,11 +7,12 @@ const tiers = [
   {
     name: "Early Bird",
     price: "₹899",
-    badge: "⚠ Only 5 left",
-    save: "Save ₹600 vs General Admission",
+    badge: "Sold Out",
+    save: null,
     validity: null,
-    active: true,
-    open: true,
+    active: false,
+    open: false,
+    soldOut: true,
   },
   {
     name: "General Admission",
@@ -19,8 +20,9 @@ const tiers = [
     badge: null,
     save: null,
     validity: null,
-    active: false,
-    open: false,
+    active: true,
+    open: true,
+    soldOut: false,
   },
   {
     name: "On the Spot",
@@ -30,6 +32,7 @@ const tiers = [
     validity: null,
     active: false,
     open: false,
+    soldOut: false,
   },
 ];
 
@@ -239,7 +242,7 @@ export function Tickets() {
                     fontFamily: "Poppins, sans-serif",
                     fontSize: 10,
                     fontWeight: 700,
-                    color: "#f6584b",
+                    color: tier.soldOut ? "rgba(244,243,239,0.3)" : "#f6584b",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
                     marginBottom: 20,
@@ -316,7 +319,7 @@ export function Tickets() {
                       cursor: "default",
                     }}
                   >
-                    Not Yet Open
+                    {tier.soldOut ? "Sold Out" : "Not Yet Open"}
                   </div>
                 )}
               </div>
