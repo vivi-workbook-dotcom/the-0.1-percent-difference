@@ -34,7 +34,7 @@ const items = [
     speakers: [
       { name: "Sanjay Mandava", role: "CEO · Landeed (YC S22)" },
       { name: "Saurav Basu", role: "Head of AI Labs · ADP India" },
-      { name: "TBC", role: "" },
+      { name: "Deepak Menon", role: "VP, Product Experiences · Microsoft" },
     ],
   },
   {
