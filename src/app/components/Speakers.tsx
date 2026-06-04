@@ -156,11 +156,11 @@ export function Speakers() {
               style={{
                 border: "1px solid rgba(246,88,75,0.2)",
                 background: "#080808",
-                cursor: "pointer",
+                cursor: isMobile ? "default" : "pointer",
               }}
               onMouseEnter={isMobile ? undefined : () => setActiveIdx(i)}
               onMouseLeave={isMobile ? undefined : () => setActiveIdx(null)}
-              onClick={() => setActiveIdx(activeIdx === i ? null : i)}
+              onClick={isMobile ? undefined : () => setActiveIdx(activeIdx === i ? null : i)}
             >
               {/* Photo + bio overlay */}
               <div style={{ position: "relative", overflow: "hidden", height: 340 }}>
@@ -173,39 +173,41 @@ export function Speakers() {
                     objectFit: "cover",
                     objectPosition: "center top",
                     display: "block",
-                    filter: activeIdx === i
+                    filter: !isMobile && activeIdx === i
                       ? "brightness(0.3) saturate(0.6)"
                       : "brightness(0.88) saturate(0.9)",
                     transition: "filter 0.4s ease",
                   }}
                 />
 
-                {/* Bio overlay */}
-                <div
-                  style={{
-                    position: "absolute",
-                    inset: 0,
-                    background: "rgba(0,0,0,0.72)",
-                    padding: "28px 24px",
-                    display: "flex",
-                    alignItems: "flex-end",
-                    transform: activeIdx === i && speaker.bio ? "translateY(0)" : "translateY(100%)",
-                    transition: "transform 0.38s cubic-bezier(0.16, 1, 0.3, 1)",
-                  }}
-                >
-                  <p
+                {/* Bio overlay — desktop only */}
+                {!isMobile && (
+                  <div
                     style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontSize: 13,
-                      color: "#f4f3ef",
-                      opacity: 0.85,
-                      lineHeight: 1.75,
-                      margin: 0,
+                      position: "absolute",
+                      inset: 0,
+                      background: "rgba(0,0,0,0.72)",
+                      padding: "28px 24px",
+                      display: "flex",
+                      alignItems: "flex-end",
+                      transform: activeIdx === i && speaker.bio ? "translateY(0)" : "translateY(100%)",
+                      transition: "transform 0.38s cubic-bezier(0.16, 1, 0.3, 1)",
                     }}
                   >
-                    {speaker.bio}
-                  </p>
-                </div>
+                    <p
+                      style={{
+                        fontFamily: "Poppins, sans-serif",
+                        fontSize: 13,
+                        color: "#f4f3ef",
+                        opacity: 0.85,
+                        lineHeight: 1.75,
+                        margin: 0,
+                      }}
+                    >
+                      {speaker.bio}
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Always-visible bottom strip */}
@@ -395,7 +397,7 @@ export function Speakers() {
           marginTop: 20,
           textAlign: "right",
         }}>
-          {isMobile ? "Tap a card to learn more" : "Hover a card to learn more"}
+          {!isMobile && "Hover a card to learn more"}
         </p>
 
         {/* Announcement badge */}
