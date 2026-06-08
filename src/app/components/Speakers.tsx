@@ -42,7 +42,7 @@ const confirmedSpeakers = [
     name: "Saurav Basu",
     title: "Head of AI Labs",
     company: "ADP India, Ex-Microsoft",
-    photo: "/speaker-saurav.jpg",
+    photo: "/speaker-saurav.png",
     linkedin: "https://www.linkedin.com/in/saurav-basu-276b4930/",
     bio: "Leads the AI Lab at ADP India, working to transform 100+ legacy products into an AI-native experience using Agentic AI. Previously at Microsoft, where he led ML for Bing ad recommendations. Before that, IBM Research — statistical machine learning and distributed optimisation.",
   },
@@ -50,7 +50,7 @@ const confirmedSpeakers = [
     name: "Adith Narein",
     title: "Design Engineer",
     company: "Sarvam.ai",
-    photo: "/speaker-adith.jpg",
+    photo: "/speaker-adith.png",
     badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "#fff", fg: "#fff", border: "transparent", favicon: "https://www.google.com/s2/favicons?domain=sarvam.ai&sz=32" },
   },
 ];
