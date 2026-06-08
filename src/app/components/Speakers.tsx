@@ -51,6 +51,7 @@ const confirmedSpeakers = [
     title: "Design Engineer",
     company: "Sarvam.ai",
     photo: "/speaker-adith.png",
+    bio: "Design Engineer at Sarvam AI, India's full-stack AI company. His work spans creative development, web experiences, design systems, and AI-powered workflows, operating at the intersection of design and engineering. He focuses on how intelligent tools are changing the way digital experiences are designed, built, and shipped.",
     badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "#fff", fg: "#fff", border: "transparent", favicon: "https://www.google.com/s2/favicons?domain=sarvam.ai&sz=32" },
   },
 ];
