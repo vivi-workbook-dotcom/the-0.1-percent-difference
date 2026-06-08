@@ -50,7 +50,7 @@ const confirmedSpeakers = [
     name: "Adith Narein",
     title: "Design Engineer",
     company: "Sarvam.ai",
-    photo: "/speaker-adith.jpg",
+    photo: "/speaker-adith.png",
     badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "#fff", fg: "#fff", border: "transparent", favicon: "https://www.google.com/s2/favicons?domain=sarvam.ai&sz=32" },
   },
 ];
