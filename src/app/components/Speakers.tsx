@@ -33,7 +33,7 @@ const confirmedSpeakers = [
     name: "Sanjay Mandava",
     title: "2x YC Founder & CEO",
     company: "Landeed (YC S22)",
-    photo: "/speaker-sanjay.png",
+    photo: "/sanjay mandava (3).png",
     linkedin: "https://www.linkedin.com/in/sanjay-mandava-%F0%9F%A6%88-2066aa24/",
     bio: "2x YC-backed founder — GoLorry and now Landeed. Before startups, he traded at investment management firms. Today he's building India's fastest property title search engine, with ambitions to expand across the developing world.",
     badge: { label: "YC", href: "https://www.ycombinator.com/companies/landeed", bg: "#FF6600", fg: "#fff", border: "transparent" },
