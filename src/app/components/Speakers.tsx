@@ -42,7 +42,7 @@ const confirmedSpeakers = [
     name: "Saurav Basu",
     title: "Head of AI Labs",
     company: "ADP India, Ex-Microsoft",
-    photo: "/speaker-saurav.jpg",
+    photo: "/speaker-saurav.png",
     linkedin: "https://www.linkedin.com/in/saurav-basu-276b4930/",
     bio: "Leads the AI Lab at ADP India, working to transform 100+ legacy products into an AI-native experience using Agentic AI. Previously at Microsoft, where he led ML for Bing ad recommendations. Before that, IBM Research — statistical machine learning and distributed optimisation.",
   },
