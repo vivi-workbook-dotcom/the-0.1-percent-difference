@@ -79,12 +79,11 @@ export function Partners() {
                     width: "auto",
                     objectFit: "contain",
                     display: "block",
-                    filter: "brightness(0) invert(1)",
-                    opacity: 0.5,
+                    opacity: 0.65,
                     transition: "opacity 0.2s ease",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "0.9")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.5")}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.65")}
                 />
               </motion.div>
             ))}
@@ -134,12 +133,11 @@ export function Partners() {
                     width: "auto",
                     objectFit: "contain",
                     display: "block",
-                    filter: "brightness(0) invert(1)",
-                    opacity: 0.5,
+                    opacity: 0.65,
                     transition: "opacity 0.2s ease",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "0.9")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.5")}
+                  onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.65")}
                 />
               </motion.div>
             ))}
