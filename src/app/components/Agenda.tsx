@@ -1,36 +1,61 @@
+import { Linkedin } from "lucide-react";
 import { motion } from "motion/react";
 
 const items = [
   {
     time: "4:30 PM",
-    tag: "Opening",
-    title: "Welcome",
-    desc: "Opening remarks and scene-setting by host. Why this conversation matters right now.",
-    duration: "20 min",
-    speakers: [{ name: "VethaVarshini", role: "Host" }],
-  },
-  {
-    time: "4:50 PM",
-    tag: "Interview",
-    title: "Building at the Frontier",
-    desc: "A sit-down conversation on design, AI, and what it means to build products at the edge of what's possible.",
+    tag: "Check-In",
+    title: "Doors Open & Check-In",
+    desc: "",
     duration: "30 min",
-    speakers: [{ name: "TBC", role: "" }],
+    speakers: [],
   },
   {
-    time: "5:20 PM",
-    tag: "Talk",
-    title: "Lightning Talk",
-    desc: "One speaker. One sharp idea. 20–30 minutes to change how you see your work.",
-    duration: "20–30 min",
-    speakers: [{ name: "Mahuya Ghosh", role: "Director & AI Strategist · Dell" }],
+    time: "5:00 PM",
+    tag: "Opening",
+    title: "Opening Welcome",
+    desc: "",
+    duration: "15 min",
+    speakers: [{ name: "Jay Bhanushali", role: "MC · Product Velocity Summit", linkedin: "https://www.linkedin.com/in/jaybhanushaliatwork/" }],
   },
   {
-    time: "5:50 PM",
+    time: "5:15 PM",
+    tag: "Opening",
+    title: "Opening Remarks",
+    desc: "",
+    duration: "15 min",
+    speakers: [{ name: "VethaVarshini", role: "Founder · The Product Street" }],
+  },
+  {
+    time: "5:30 PM",
+    tag: "Keynote",
+    title: "\"I Asked AI. Then I Asked Humans. 20 Decisions. 20 Outcomes. ...That Changed My Mind.\"",
+    desc: "",
+    duration: "30 min",
+    speakers: [{ name: "Mahuya Ghosh", role: "Director & AI Strategist · Dell Technologies" }],
+  },
+  {
+    time: "6:00 PM",
+    tag: "Fireside Chat",
+    title: "\"Think in Systems, Build in Flows\"",
+    desc: "",
+    duration: "30 min",
+    speakers: [{ name: "Adith Narein", role: "Design Engineer · Sarvam.ai" }],
+  },
+  {
+    time: "6:30 PM",
+    tag: "Lightning",
+    title: "⚡ Lightning Round",
+    desc: "Surprise Session",
+    duration: "30 min",
+    speakers: [],
+  },
+  {
+    time: "7:00 PM",
     tag: "Panel",
-    title: "Fireside Chat",
-    desc: "No slides. Moderated conversation on the tensions, trade-offs, and truths of the startup-legacy intersection.",
-    duration: "40 min",
+    title: "Panel Discussion",
+    desc: "Topic: TBD",
+    duration: "30 min",
     speakers: [
       { name: "Sanjay Mandava", role: "CEO · Landeed (YC S22)" },
       { name: "Saurav Basu", role: "Head of AI Labs · ADP India" },
@@ -38,19 +63,11 @@ const items = [
     ],
   },
   {
-    time: "6:30 PM",
+    time: "7:30 PM",
     tag: "Network",
     title: "Curated Networking",
-    desc: "Not a chaotic mixer. A structured wind-down where conversations go deeper.",
-    duration: "90 min",
-    speakers: [],
-  },
-  {
-    time: "8:00 PM",
-    tag: "Close",
-    title: "Close",
-    desc: "See you on the other side.",
-    duration: "",
+    desc: "Themed stations + refreshments. Come with a business card, leave with a collaborator.",
+    duration: "60 min",
     speakers: [],
   },
 ];
@@ -272,6 +289,19 @@ export function Agenda() {
                         >
                           · {s.role}
                         </span>
+                      )}
+                      {"linkedin" in s && s.linkedin && (
+                        <a
+                          href={s.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={e => e.stopPropagation()}
+                          style={{ color: "#0A66C2", opacity: 0.7, display: "flex", alignItems: "center", marginLeft: 2 }}
+                          onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
+                          onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
+                        >
+                          <Linkedin size={11} />
+                        </a>
                       )}
                     </div>
                   ))}
