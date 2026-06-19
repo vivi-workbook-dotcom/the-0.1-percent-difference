@@ -331,7 +331,7 @@ export function Navbar() {
         /* Mobile: hide nav links, show hamburger + compact register CTA */
         @media (max-width: 767px) {
           .nav-links-desktop { display: none !important; }
-          .nav-hamburger { display: flex !important; }
+          .nav-hamburger { display: flex !important; margin-right: 8px !important; }
           .nav-register-desktop {
             display: inline-flex !important;
             font-size: 10px !important;
