@@ -134,6 +134,8 @@ export default function App() {
           /* Hero meta — tighter spacing so Date/Time/Venue stay on one line */
           .hero-meta-item { padding-right: 14px !important; }
           .hero-meta-item + .hero-meta-item { padding-left: 14px !important; }
+          /* Hero countdown — tighten on small screens */
+          .hero-countdown > div > div { padding: 12px 14px 10px !important; min-width: 52px !important; }
           /* Hero CTAs — equal full width, stacked */
           .hero-ctas { width: 100% !important; flex-direction: column !important; }
           .hero-ctas a, .hero-ctas button { width: 100% !important; box-sizing: border-box !important; text-align: center !important; justify-content: center !important; }
