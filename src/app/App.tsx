@@ -14,6 +14,7 @@ import { Venue } from "./components/Venue";
 import { Tickets } from "./components/Tickets";
 import { Sponsor } from "./components/Sponsor";
 import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 export default function App() {
   return (
@@ -171,6 +172,7 @@ export default function App() {
       <Venue />
       {/* <Sponsor /> */}
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
