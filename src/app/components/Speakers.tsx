@@ -16,6 +16,7 @@ const confirmedSpeakers = [
     title: "Director & AI Strategist",
     company: "Dell",
     photo: "/speaker-mahuya.png",
+    photoPosition: "center 20%",
     linkedin: "https://www.linkedin.com/in/mahuyaghosh/",
     website: "https://www.mahuyaghosh.com/",
     bio: "18 years building B2B and SaaS platforms across global markets. She holds 10 US patents spanning AI-driven optimization and applied ML, and is co-author of Mystery to Mastery. Advisor to IIIT-H, IIM Jammu, and Product School — recognised by Indus OS and Woxsen University.",
@@ -171,7 +172,7 @@ export function Speakers() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center top",
+                    objectPosition: ("photoPosition" in speaker && speaker.photoPosition) ? speaker.photoPosition : "center top",
                     display: "block",
                     filter: !isMobile && activeIdx === i
                       ? "brightness(0.3) saturate(0.6)"
