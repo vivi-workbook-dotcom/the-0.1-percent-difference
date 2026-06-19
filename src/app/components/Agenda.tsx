@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Download, Linkedin } from "lucide-react";
 import { motion } from "motion/react";
 
 const items = [
@@ -127,17 +127,45 @@ export function Agenda() {
             What's happening<br />on the day
           </motion.h2>
 
-          <p
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: 13,
-              color: "#f4f3ef",
-              opacity: 0.35,
-              letterSpacing: "0.05em",
-            }}
-          >
-            July 4, 2026 · 4:30 PM – 8:30 PM · T HUB, Hyderabad
-          </p>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 16 }}>
+            <p
+              style={{
+                fontFamily: "Poppins, sans-serif",
+                fontSize: 13,
+                color: "#f4f3ef",
+                opacity: 0.35,
+                letterSpacing: "0.05em",
+                margin: 0,
+              }}
+            >
+              July 4, 2026 · 4:30 PM – 8:30 PM · T HUB, Hyderabad
+            </p>
+            <a
+              href="/PVS_Agenda.pdf"
+              download="PVS_Agenda.pdf"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 7,
+                fontFamily: "Poppins, sans-serif",
+                fontSize: 11,
+                fontWeight: 600,
+                color: "#f4f3ef",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                padding: "9px 16px",
+                border: "1px solid rgba(244,243,239,0.18)",
+                opacity: 0.6,
+                transition: "opacity 0.2s ease, border-color 0.2s ease",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.borderColor = "rgba(244,243,239,0.45)"; }}
+              onMouseLeave={e => { e.currentTarget.style.opacity = "0.6"; e.currentTarget.style.borderColor = "rgba(244,243,239,0.18)"; }}
+            >
+              <Download size={12} />
+              Download Agenda
+            </a>
+          </div>
         </div>
 
         {/* Agenda table */}
