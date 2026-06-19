@@ -1,40 +1,8 @@
-import { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
-const EVENT_DATE = new Date("2026-07-04T16:30:00+05:30");
-
-function useCountdown() {
-  const getTimeLeft = () => {
-    const diff = EVENT_DATE.getTime() - Date.now();
-    if (diff <= 0) return null;
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    return { days, hours, minutes, seconds };
-  };
-
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
-
-  useEffect(() => {
-    const id = setInterval(() => setTimeLeft(getTimeLeft()), 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  return timeLeft;
-}
 
 export function AnnouncementBar() {
-  const timeLeft = useCountdown();
-
-  const countdownText = () => {
-    if (!timeLeft) return "The summit is today!";
-    if (timeLeft.days > 1) return `${timeLeft.days} days left to register.`;
-    if (timeLeft.days === 1) return `1 day left to register.`;
-    if (timeLeft.hours > 0) return `${timeLeft.hours}h ${timeLeft.minutes}m left to register.`;
-    return `${timeLeft.minutes}m ${timeLeft.seconds}s left to register.`;
-  };
 
   return (
     <div
@@ -63,8 +31,8 @@ export function AnnouncementBar() {
           margin: 0,
         }}
       >
-        🎟 General Admission is now open.{" "}
-        <span style={{ fontWeight: 700 }}>{countdownText()}</span>
+        🎟 Seats filling fast · General Admission closes July 3.{" "}
+        <span style={{ fontWeight: 400, opacity: 0.75 }}>Don't wait.</span>
       </p>
       <a
         href={RAZORPAY_LINK}
