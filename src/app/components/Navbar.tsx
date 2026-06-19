@@ -236,11 +236,16 @@ export function Navbar() {
           .nav-mobile-drawer { display: none !important; }
           .nav-register-desktop { display: inline-flex !important; }
         }
-        /* Mobile: hide nav links + register CTA, show hamburger */
+        /* Mobile: hide nav links, show hamburger + compact register CTA */
         @media (max-width: 767px) {
           .nav-links-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; }
-          .nav-register-desktop { display: none !important; }
+          .nav-register-desktop {
+            display: inline-flex !important;
+            font-size: 10px !important;
+            padding: 7px 12px !important;
+            letter-spacing: 0.07em !important;
+          }
         }
       `}</style>
     </>
