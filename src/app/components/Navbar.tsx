@@ -108,12 +108,12 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Register CTA — always visible */}
+            {/* Register CTA — desktop only; mobile has it in the drawer + hero */}
             <a
               href={RAZORPAY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shine nav-register-cta"
+              className="btn-shine nav-register-cta nav-register-desktop"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -229,16 +229,18 @@ export function Navbar() {
       </nav>
 
       <style>{`
-        /* Desktop: show nav links, hide hamburger */
+        /* Desktop: show nav links + register CTA, hide hamburger */
         @media (min-width: 768px) {
           .nav-links-desktop { display: flex !important; }
           .nav-hamburger { display: none !important; }
           .nav-mobile-drawer { display: none !important; }
+          .nav-register-desktop { display: inline-flex !important; }
         }
-        /* Mobile: hide nav links, show hamburger */
+        /* Mobile: hide nav links + register CTA, show hamburger */
         @media (max-width: 767px) {
           .nav-links-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; }
+          .nav-register-desktop { display: none !important; }
         }
       `}</style>
     </>
