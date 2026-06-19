@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
 import { WhoShouldAttend } from "./components/WhoShouldAttend";
+import { Partners } from "./components/Partners";
 import { Agenda } from "./components/Agenda";
 import { Speakers } from "./components/Speakers";
 import { PastEvents } from "./components/PastEvents";
@@ -152,6 +153,7 @@ export default function App() {
       <Theme />
       <Agenda />
       <Tickets />
+      <Partners />
       <WhoShouldAttend />
       <PastEvents />
       {/* <Organizer /> — content moved to HostModal, triggered from footer */}
