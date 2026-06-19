@@ -1,5 +1,67 @@
 import { motion } from "motion/react";
 
+function PartnerRow({ label, partners }: { label: string; partners: { name: string; logo: string }[] }) {
+  return (
+    <div>
+      <div style={{
+        fontFamily: "Poppins, sans-serif",
+        fontSize: 10,
+        fontWeight: 600,
+        color: "#f4f3ef",
+        opacity: 0.25,
+        letterSpacing: "0.25em",
+        textTransform: "uppercase",
+        marginBottom: 28,
+      }}>
+        {label}
+      </div>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 16 }}>
+        {partners.map((p, i) => (
+          <motion.div
+            key={p.name}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            style={{
+              width: 180,
+              height: 90,
+              border: "1px solid rgba(244,243,239,0.08)",
+              background: "rgba(244,243,239,0.02)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 20,
+              opacity: 0.7,
+              transition: "opacity 0.2s ease, border-color 0.2s ease",
+              boxSizing: "border-box",
+            }}
+            onMouseEnter={e => {
+              (e.currentTarget as HTMLElement).style.opacity = "1";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(244,243,239,0.18)";
+            }}
+            onMouseLeave={e => {
+              (e.currentTarget as HTMLElement).style.opacity = "0.7";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(244,243,239,0.08)";
+            }}
+          >
+            <img
+              src={p.logo}
+              alt={p.name}
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                objectFit: "contain",
+                display: "block",
+              }}
+            />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const communityPartners = [
   { name: "Community Partner 1", logo: "/partner-community-1.png" },
   { name: "Community Partner 2", logo: "/partner-community-2.png" },
@@ -44,105 +106,13 @@ export function Partners() {
         </motion.div>
 
         {/* Community Partners */}
-        <div style={{ marginBottom: 64 }}>
-          <div style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: 10,
-            fontWeight: 600,
-            color: "#f4f3ef",
-            opacity: 0.25,
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-            marginBottom: 32,
-          }}>
-            Community Partners
-          </div>
-          <div style={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: 40,
-          }}>
-            {communityPartners.map((p, i) => (
-              <motion.div
-                key={p.name}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-              >
-                <img
-                  src={p.logo}
-                  alt={p.name}
-                  style={{
-                    height: 40,
-                    width: "auto",
-                    objectFit: "contain",
-                    display: "block",
-                    opacity: 0.65,
-                    transition: "opacity 0.2s ease",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.65")}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <PartnerRow label="Community Partners" partners={communityPartners} />
 
         {/* Divider */}
-        <div style={{
-          height: 1,
-          background: "rgba(244,243,239,0.06)",
-          marginBottom: 64,
-        }} />
+        <div style={{ height: 1, background: "rgba(244,243,239,0.06)", margin: "56px 0" }} />
 
         {/* F&B Partners */}
-        <div>
-          <div style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: 10,
-            fontWeight: 600,
-            color: "#f4f3ef",
-            opacity: 0.25,
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-            marginBottom: 32,
-          }}>
-            F&B Partners
-          </div>
-          <div style={{
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: 40,
-          }}>
-            {fnbPartners.map((p, i) => (
-              <motion.div
-                key={p.name}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-              >
-                <img
-                  src={p.logo}
-                  alt={p.name}
-                  style={{
-                    height: 40,
-                    width: "auto",
-                    objectFit: "contain",
-                    display: "block",
-                    opacity: 0.65,
-                    transition: "opacity 0.2s ease",
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                  onMouseLeave={e => (e.currentTarget.style.opacity = "0.65")}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <PartnerRow label="F&B Partners" partners={fnbPartners} />
       </div>
     </section>
   );
