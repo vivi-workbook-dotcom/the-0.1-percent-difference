@@ -4,6 +4,7 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
 import { WhoShouldAttend } from "./components/WhoShouldAttend";
+import { Partners } from "./components/Partners";
 import { Agenda } from "./components/Agenda";
 import { Speakers } from "./components/Speakers";
 import { PastEvents } from "./components/PastEvents";
@@ -134,6 +135,8 @@ export default function App() {
           /* Hero meta — tighter spacing so Date/Time/Venue stay on one line */
           .hero-meta-item { padding-right: 14px !important; }
           .hero-meta-item + .hero-meta-item { padding-left: 14px !important; }
+          /* Hero countdown — tighten on small screens */
+          .hero-countdown > div > div { padding: 12px 14px 10px !important; min-width: 52px !important; }
           /* Hero CTAs — equal full width, stacked */
           .hero-ctas { width: 100% !important; flex-direction: column !important; }
           .hero-ctas a, .hero-ctas button { width: 100% !important; box-sizing: border-box !important; text-align: center !important; justify-content: center !important; }
@@ -150,6 +153,7 @@ export default function App() {
       <Theme />
       <Agenda />
       <Tickets />
+      <Partners />
       <WhoShouldAttend />
       <PastEvents />
       {/* <Organizer /> — content moved to HostModal, triggered from footer */}

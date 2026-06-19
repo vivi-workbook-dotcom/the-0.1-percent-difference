@@ -1,9 +1,29 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+
+const EVENT_DATE = new Date("2026-07-04T16:30:00+05:30");
+
+function useCountdown() {
+  const calc = () => {
+    const diff = EVENT_DATE.getTime() - Date.now();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+      days: Math.floor(diff / 86400000),
+      hours: Math.floor((diff % 86400000) / 3600000),
+      minutes: Math.floor((diff % 3600000) / 60000),
+      seconds: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const [t, setT] = useState(calc);
+  useEffect(() => { const id = setInterval(() => setT(calc()), 1000); return () => clearInterval(id); }, []);
+  return t;
+}
 
 export function Hero() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
+  const countdown = useCountdown();
 
   return (
     <section
@@ -239,7 +259,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
           style={{
             marginTop: 44,
             display: "flex",
@@ -358,6 +378,102 @@ export function Hero() {
             >
               View Agenda
             </button>
+          </div>
+        </motion.div>
+
+        {/* Countdown — below CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginTop: 36 }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+            <div style={{ width: 24, height: 1, background: "#f6584b", opacity: 0.5 }} />
+            <span style={{
+              fontFamily: "Poppins, sans-serif",
+              fontSize: 10,
+              fontWeight: 600,
+              color: "#f4f3ef",
+              opacity: 0.3,
+              letterSpacing: "0.3em",
+              textTransform: "uppercase",
+            }}>
+              Countdown to July 4
+            </span>
+          </div>
+
+          <div className="hero-countdown" style={{ display: "flex", alignItems: "stretch", gap: 0 }}>
+            {[
+              { value: countdown.days, label: "Days" },
+              { value: countdown.hours, label: "Hrs" },
+              { value: countdown.minutes, label: "Mins" },
+              { value: countdown.seconds, label: "Secs" },
+            ].map((unit, i) => (
+              <div key={unit.label} style={{ display: "flex", alignItems: "stretch" }}>
+                {i > 0 && (
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "0 10px",
+                    fontSize: "clamp(20px, 3vw, 36px)",
+                    fontFamily: "Montserrat, sans-serif",
+                    fontWeight: 900,
+                    color: "#f6584b",
+                    opacity: 0.3,
+                    lineHeight: 1,
+                    paddingBottom: 20,
+                  }}>:</div>
+                )}
+                <div style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  background: i === 0 ? "rgba(246,88,75,0.07)" : "rgba(244,243,239,0.03)",
+                  border: i === 0 ? "1px solid rgba(246,88,75,0.2)" : "1px solid rgba(244,243,239,0.07)",
+                  padding: "16px 24px 14px",
+                  minWidth: "clamp(64px, 8vw, 96px)",
+                  position: "relative",
+                  overflow: "hidden",
+                }}>
+                  {i === 0 && (
+                    <div style={{
+                      position: "absolute",
+                      top: 0, left: 0, right: 0,
+                      height: 2,
+                      background: "#f6584b",
+                      boxShadow: "0 0 8px rgba(246,88,75,0.6)",
+                    }} />
+                  )}
+                  <span style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: "clamp(32px, 4.5vw, 64px)",
+                    fontWeight: 900,
+                    color: i === 0 ? "#f6584b" : "#f4f3ef",
+                    letterSpacing: "-0.04em",
+                    lineHeight: 1,
+                    fontVariantNumeric: "tabular-nums",
+                    minWidth: "2ch",
+                    textAlign: "center",
+                    display: "block",
+                  }}>
+                    {String(unit.value).padStart(2, "0")}
+                  </span>
+                  <span style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 9,
+                    fontWeight: 600,
+                    color: i === 0 ? "#f6584b" : "#f4f3ef",
+                    opacity: i === 0 ? 0.7 : 0.25,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    marginTop: 8,
+                  }}>
+                    {unit.label}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>
