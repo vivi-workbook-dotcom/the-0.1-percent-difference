@@ -4,57 +4,57 @@ import { motion } from "motion/react";
 const items = [
   {
     time: "4:30 PM",
-    tag: "Check-In",
     title: "Doors Open & Check-In",
+    format: "",
     desc: "",
     duration: "30 min",
     speakers: [],
   },
   {
     time: "5:00 PM",
-    tag: "Opening",
     title: "Opening Welcome",
+    format: "",
     desc: "",
     duration: "15 min",
     speakers: [{ name: "Jay Bhanushali", role: "MC · Product Velocity Summit", linkedin: "https://www.linkedin.com/in/jaybhanushaliatwork/" }],
   },
   {
     time: "5:15 PM",
-    tag: "Opening",
     title: "Opening Remarks",
+    format: "",
     desc: "",
     duration: "15 min",
     speakers: [{ name: "VethaVarshini", role: "Founder · The Product Street" }],
   },
   {
     time: "5:30 PM",
-    tag: "Keynote",
     title: "\"I Asked AI. Then I Asked Humans. 20 Decisions. 20 Outcomes. ...That Changed My Mind.\"",
+    format: "Keynote",
     desc: "",
     duration: "30 min",
     speakers: [{ name: "Mahuya Ghosh", role: "Director & AI Strategist · Dell Technologies" }],
   },
   {
     time: "6:00 PM",
-    tag: "Fireside Chat",
     title: "\"Think in Systems, Build in Flows\"",
+    format: "Fireside Chat",
     desc: "",
     duration: "30 min",
     speakers: [{ name: "Adith Narein", role: "Design Engineer · Sarvam.ai" }],
   },
   {
     time: "6:30 PM",
-    tag: "Lightning",
     title: "⚡ Lightning Round",
+    format: "",
     desc: "Surprise Session",
     duration: "30 min",
     speakers: [],
   },
   {
     time: "7:00 PM",
-    tag: "Panel",
-    title: "Panel Discussion",
-    desc: "\"The AI Equation: Adoption, Economics & Humans\"",
+    title: "\"The AI Equation: Adoption, Economics & Judgment\"",
+    format: "Panel",
+    desc: "",
     duration: "30 min",
     speakers: [
       { name: "Sanjay Mandava", role: "CEO · Landeed (YC S22)" },
@@ -64,8 +64,8 @@ const items = [
   },
   {
     time: "7:30 PM",
-    tag: "Network",
     title: "Curated Networking",
+    format: "",
     desc: "Themed stations + refreshments. Come with a business card, leave with a collaborator.",
     duration: "60 min",
     speakers: [],
@@ -146,14 +146,14 @@ export function Agenda() {
           className="agenda-header-row"
           style={{
             display: "grid",
-            gridTemplateColumns: "140px 100px 1fr auto",
+            gridTemplateColumns: "140px 1fr auto",
             gap: 32,
             padding: "0 0 16px",
             borderBottom: "1px solid rgba(244,243,239,0.1)",
             marginBottom: 0,
           }}
         >
-          {["Time", "Format", "Session", "Duration"].map((h, i) => (
+          {["Time", "Session", "Duration"].map((h, i) => (
             <span
               key={i}
               style={{
@@ -164,7 +164,7 @@ export function Agenda() {
                 opacity: 0.25,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                textAlign: i === 3 ? "right" : "left",
+                textAlign: i === 2 ? "right" : "left",
               }}
             >
               {h}
@@ -182,7 +182,7 @@ export function Agenda() {
             className="agenda-row"
             style={{
               display: "grid",
-              gridTemplateColumns: "140px 100px 1fr auto",
+              gridTemplateColumns: "140px 1fr auto",
               gap: 32,
               padding: "28px 0",
               borderBottom: "1px solid rgba(244,243,239,0.06)",
@@ -206,34 +206,37 @@ export function Agenda() {
               {item.time}
             </span>
 
-            {/* Tag */}
-            <span
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: 11,
-                fontWeight: 600,
-                color: "#f4f3ef",
-                opacity: 0.35,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-              }}
-            >
-              {item.tag}
-            </span>
-
-            {/* Title + desc + speakers */}
+            {/* Title + format badge + desc + speakers */}
             <div>
-              <div
-                style={{
-                  fontFamily: "Montserrat, sans-serif",
-                  fontSize: "clamp(15px, 1.6vw, 18px)",
-                  fontWeight: 800,
-                  color: "#f4f3ef",
-                  marginBottom: 6,
-                  letterSpacing: "-0.01em",
-                }}
-              >
-                {item.title}
+              <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 6 }}>
+                <div
+                  style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: "clamp(15px, 1.6vw, 18px)",
+                    fontWeight: 800,
+                    color: "#f4f3ef",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {item.title}
+                </div>
+                {item.format && (
+                  <span style={{
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 10,
+                    fontWeight: 600,
+                    color: "#f6584b",
+                    background: "rgba(246,88,75,0.1)",
+                    border: "1px solid rgba(246,88,75,0.25)",
+                    padding: "3px 9px",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
+                  }}>
+                    {item.format}
+                  </span>
+                )}
               </div>
               <div
                 style={{
