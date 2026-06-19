@@ -6,6 +6,7 @@ export function AnnouncementBar() {
 
   return (
     <div
+      className="announcement-bar"
       style={{
         position: "fixed",
         top: 0,

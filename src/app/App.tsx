@@ -99,6 +99,14 @@ export default function App() {
           }
         }
 
+        @media (max-width: 767px) {
+          .announcement-bar { display: none !important; }
+          /* Navbar sits at top:0 on mobile since ribbon is hidden */
+          nav { top: 0 !important; }
+          /* Hero padding-top accounts for only the navbar (76px) */
+          .hero-section { padding-top: 76px !important; }
+        }
+
         @media (max-width: 640px) {
           section { padding-left: 20px !important; padding-right: 20px !important;
                     padding-top: 60px !important; padding-bottom: 60px !important; }
