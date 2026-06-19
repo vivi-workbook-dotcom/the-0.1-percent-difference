@@ -103,6 +103,8 @@ export default function App() {
           .announcement-bar { display: none !important; }
           /* Navbar sits at top:0 on mobile since ribbon is hidden */
           nav { top: 0 !important; }
+          /* Tighter side padding so logo and right group have more room */
+          nav > div > div { padding-left: 20px !important; padding-right: 20px !important; }
           /* Hero padding-top accounts for only the navbar (76px) */
           .hero-section { padding-top: 76px !important; }
         }
