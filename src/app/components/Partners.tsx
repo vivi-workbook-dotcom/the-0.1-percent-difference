@@ -8,7 +8,7 @@ const communityPartners = [
 
 const fnbPartners = [
   { name: "F&B Partner 1", logo: "/partner-fnb-1.png" },
-  { name: "F&B Partner 2", logo: "/partner-fnb-2.png" },
+  { name: "F&B Partner 2", logo: "/partner-fnb-2.jpeg" },
 ];
 
 export function Partners() {
