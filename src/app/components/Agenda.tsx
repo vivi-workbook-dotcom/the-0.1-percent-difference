@@ -15,7 +15,7 @@ const items = [
     title: "Building at the Frontier",
     desc: "A sit-down conversation on design, AI, and what it means to build products at the edge of what's possible.",
     duration: "30 min",
-    speakers: [{ name: "Varun Ande", role: "Head of Design · Sarvam.ai" }],
+    speakers: [{ name: "TBC", role: "" }],
   },
   {
     time: "5:20 PM",

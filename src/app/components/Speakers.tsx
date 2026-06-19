@@ -12,15 +12,6 @@ const confirmedSpeakers = [
     bio: "",
   },
   {
-    name: "Varun Ande",
-    title: "Head of Design",
-    company: "Sarvam.ai",
-    photo: "/speaker-varun.jpg",
-    linkedin: "https://www.linkedin.com/in/ande-varun-345888138/",
-    bio: "Head of Design at Sarvam.ai — India's first full-stack AI platform. He's shaping how millions of Indians will experience AI in their own languages, making cutting-edge technology feel native rather than imported.",
-    badge: { label: "SARVAM", href: "https://www.sarvam.ai/", bg: "#fff", fg: "#fff", border: "transparent", favicon: "https://www.google.com/s2/favicons?domain=sarvam.ai&sz=32" },
-  },
-  {
     name: "Mahuya Ghosh",
     title: "Director & AI Strategist",
     company: "Dell",
