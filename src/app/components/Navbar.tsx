@@ -71,75 +71,73 @@ export function Navbar() {
             }}
           />
 
-          {/* Desktop nav links */}
-          <div
-            className="nav-links-desktop"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 32,
-            }}
-          >
-            {navLinks.map(link => (
-              <button
-                key={link.id}
-                onClick={() => scrollTo(link.id)}
-                style={{
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: 12,
-                  fontWeight: 500,
-                  color: "#f4f3ef",
-                  opacity: 0.55,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  padding: 0,
-                  transition: "opacity 0.2s ease",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                onMouseLeave={e => (e.currentTarget.style.opacity = "0.55")}
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
+          {/* Right side: nav links + Register CTA + hamburger */}
+          <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
+            {/* Desktop nav links */}
+            <div
+              className="nav-links-desktop"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 28,
+              }}
+            >
+              {navLinks.map(link => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollTo(link.id)}
+                  style={{
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    fontFamily: "Poppins, sans-serif",
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: "#f4f3ef",
+                    opacity: 0.75,
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    padding: 0,
+                    transition: "opacity 0.2s ease, color 0.2s ease",
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.color = "#f6584b"; }}
+                  onMouseLeave={e => { e.currentTarget.style.opacity = "0.75"; e.currentTarget.style.color = "#f4f3ef"; }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
 
-          {/* Right side: Get Tickets + hamburger */}
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            {/* Get Tickets CTA — fades in on scroll */}
+            {/* Register CTA — always visible */}
             <a
               href={RAZORPAY_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shine"
+              className="btn-shine nav-register-cta"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
                 fontFamily: "Poppins, sans-serif",
-                fontSize: 12,
+                fontSize: 11,
                 fontWeight: 700,
                 color: "#000",
                 background: "#f6584b",
                 padding: "10px 20px",
                 textDecoration: "none",
-                letterSpacing: "0.07em",
+                letterSpacing: "0.1em",
                 textTransform: "uppercase",
                 borderRadius: 2,
-                transition: "all 0.2s ease",
+                transition: "background 0.2s ease",
                 position: "relative",
                 overflow: "hidden",
-                opacity: scrolled ? 1 : 0,
-                pointerEvents: scrolled ? "auto" : "none",
-                transform: scrolled ? "translateY(0)" : "translateY(-4px)",
+                whiteSpace: "nowrap",
               }}
               onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
               onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
             >
-              Get Tickets
-              <ArrowUpRight size={13} />
+              Register
+              <ArrowUpRight size={12} />
             </a>
 
             {/* Hamburger — mobile only */}
