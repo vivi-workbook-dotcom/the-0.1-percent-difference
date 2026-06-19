@@ -42,10 +42,10 @@ export function Navbar() {
           left: 0,
           right: 0,
           zIndex: 100,
-          transition: "all 0.4s ease",
-          background: scrolled || menuOpen ? "rgba(0,0,0,0.96)" : "transparent",
-          backdropFilter: scrolled || menuOpen ? "blur(20px)" : "none",
-          borderBottom: scrolled || menuOpen ? "1px solid rgba(244,243,239,0.06)" : "none",
+          transition: "background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease",
+          background: scrolled || menuOpen ? "rgba(0,0,0,0.96)" : "rgba(0,0,0,0.75)",
+          backdropFilter: "blur(20px)",
+          borderBottom: scrolled ? "1px solid rgba(244,243,239,0.06)" : "1px solid rgba(244,243,239,0.03)",
         }}
       >
         <div
