@@ -15,7 +15,7 @@ const confirmedSpeakers = [
     name: "Mahuya Ghosh",
     title: "Director & AI Strategist",
     company: "Dell",
-    photo: "/speaker-mahuya.jpg",
+    photo: "/speaker-mahuya.png",
     linkedin: "https://www.linkedin.com/in/mahuyaghosh/",
     website: "https://www.mahuyaghosh.com/",
     bio: "18 years building B2B and SaaS platforms across global markets. She holds 10 US patents spanning AI-driven optimization and applied ML, and is co-author of Mystery to Mastery. Advisor to IIIT-H, IIM Jammu, and Product School — recognised by Indus OS and Woxsen University.",
