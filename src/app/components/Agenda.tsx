@@ -54,7 +54,7 @@ const items = [
     time: "7:00 PM",
     tag: "Panel",
     title: "Panel Discussion",
-    desc: "Topic: TBD",
+    desc: "\"The AI Equation: Adoption, Economics & Humans\"",
     duration: "30 min",
     speakers: [
       { name: "Sanjay Mandava", role: "CEO · Landeed (YC S22)" },
