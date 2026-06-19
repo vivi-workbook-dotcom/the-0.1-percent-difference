@@ -110,26 +110,8 @@ export function Partners() {
         </motion.div>
       </div>
 
-      {/* Community Partners marquee */}
-      <div style={{ marginTop: 60 }}>
-        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 40px", marginBottom: 14 }}>
-          <span style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: 10,
-            fontWeight: 600,
-            color: "#f4f3ef",
-            opacity: 0.25,
-            letterSpacing: "0.25em",
-            textTransform: "uppercase",
-          }}>
-            Community Partners
-          </span>
-        </div>
-        <MarqueeRow partners={communityPartners} />
-      </div>
-
       {/* F&B Partners marquee */}
-      <div style={{ marginTop: 40 }}>
+      <div style={{ marginTop: 60 }}>
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 40px", marginBottom: 14 }}>
           <span style={{
             fontFamily: "Poppins, sans-serif",
@@ -144,6 +126,24 @@ export function Partners() {
           </span>
         </div>
         <MarqueeRow partners={fnbPartners} reverse />
+      </div>
+
+      {/* Community Partners marquee */}
+      <div style={{ marginTop: 40 }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 40px", marginBottom: 14 }}>
+          <span style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: 10,
+            fontWeight: 600,
+            color: "#f4f3ef",
+            opacity: 0.25,
+            letterSpacing: "0.25em",
+            textTransform: "uppercase",
+          }}>
+            Community Partners
+          </span>
+        </div>
+        <MarqueeRow partners={communityPartners} />
       </div>
 
       <style>{`
