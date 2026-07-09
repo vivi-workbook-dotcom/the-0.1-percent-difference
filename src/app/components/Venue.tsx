@@ -140,7 +140,7 @@ export function Venue() {
                     marginBottom: 4,
                   }}
                 >
-                  Doors Open
+                  Doors Open · 4:30 PM
                 </div>
                 <p
                   style={{

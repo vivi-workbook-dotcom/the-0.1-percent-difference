@@ -28,7 +28,7 @@ const items = [
   },
   {
     time: "5:30 PM",
-    title: "\"I Asked AI. Then I Asked Humans. 20 Decisions. 20 Outcomes. ...That Changed My Mind.\"",
+    title: "I Asked AI. Then I Asked Humans. 20 Decisions. 20 Outcomes. ...That Changed My Mind.",
     format: "Keynote",
     desc: "",
     duration: "30 min",
@@ -36,7 +36,7 @@ const items = [
   },
   {
     time: "6:00 PM",
-    title: "\"Think in Systems, Build in Flows\"",
+    title: "Think in Systems, Build in Flows",
     format: "Fireside Chat",
     desc: "",
     duration: "30 min",
@@ -52,7 +52,7 @@ const items = [
   },
   {
     time: "7:00 PM",
-    title: "\"The AI Equation: Adoption, Economics & Judgment\"",
+    title: "The AI Equation: Adoption, Economics & Judgment",
     format: "Panel",
     desc: "",
     duration: "30 min",

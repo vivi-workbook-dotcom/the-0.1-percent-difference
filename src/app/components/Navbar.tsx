@@ -4,8 +4,6 @@ import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
 
 const navLinks = [
-  { label: "Speakers", id: "speakers" },
-  { label: "Agenda", id: "agenda" },
   { label: "Tickets", id: "tickets" },
   { label: "Venue", id: "venue" },
 ];
@@ -331,7 +329,7 @@ export function Navbar() {
         /* Mobile: hide nav links, show hamburger + compact register CTA */
         @media (max-width: 767px) {
           .nav-links-desktop { display: none !important; }
-          .nav-hamburger { display: flex !important; }
+          .nav-hamburger { display: flex !important; margin-right: 8px !important; }
           .nav-register-desktop {
             display: inline-flex !important;
             font-size: 10px !important;
