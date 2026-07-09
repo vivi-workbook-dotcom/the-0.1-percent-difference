@@ -108,35 +108,25 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Subscribe CTA */}
+            {/* YouTube icon CTA — no container, just the logo */}
             <a
               href={YOUTUBE_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-shine nav-register-cta nav-register-desktop"
+              className="nav-register-desktop nav-yt-cta"
+              aria-label="Subscribe on YouTube"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 8,
-                fontFamily: "Poppins, sans-serif",
-                fontSize: 11,
-                fontWeight: 700,
-                color: "#000",
-                background: "#f6584b",
-                padding: "10px 20px",
+                color: "#fff",
                 textDecoration: "none",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                borderRadius: 2,
-                transition: "background 0.2s ease",
-                position: "relative",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
+                opacity: 0.8,
+                transition: "opacity 0.2s ease, transform 0.2s ease",
               }}
-              onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
-              onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
+              onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "scale(1.12)"; }}
+              onMouseLeave={e => { e.currentTarget.style.opacity = "0.8"; e.currentTarget.style.transform = "scale(1)"; }}
             >
-              <YouTubeIcon size={22} />
+              <YouTubeIcon size={28} />
             </a>
 
             {/* Hamburger — mobile only */}
@@ -206,22 +196,24 @@ export function Navbar() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: 8,
+                gap: 10,
                 marginTop: 20,
-                fontFamily: "Poppins, sans-serif",
-                fontSize: 13,
-                fontWeight: 700,
-                color: "#000",
-                background: "#f6584b",
-                padding: "12px 24px",
                 textDecoration: "none",
-                letterSpacing: "0.07em",
-                textTransform: "uppercase",
-                borderRadius: 2,
+                color: "#fff",
+                opacity: 0.8,
               }}
             >
-              <YouTubeIcon size={22} />
-              Subscribe
+              <YouTubeIcon size={26} />
+              <span style={{
+                fontFamily: "Poppins, sans-serif",
+                fontSize: 13,
+                fontWeight: 600,
+                color: "#f4f3ef",
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+              }}>
+                Subscribe on YouTube
+              </span>
             </a>
           </div>
         </div>
