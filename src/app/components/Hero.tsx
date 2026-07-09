@@ -172,7 +172,7 @@ export function Hero() {
           { src: "/pvs-gallery-1.png", alt: "Panel discussion",     pos: "center top" },
           { src: "/pvs-hero.jpg",      alt: "Aerial stage view",    pos: "center 30%" },
           { src: "/pvs-gallery-2.jpg", alt: "Speaker on stage",     pos: "center"     },
-          { src: "/pvs-fireside.jpg",  alt: "Fireside chat",        pos: "center top" },
+          { src: "/fireside_chat.JPG",  alt: "Fireside chat",        pos: "center top" },
         ].map((photo, i) => (
           <a
             key={i}
