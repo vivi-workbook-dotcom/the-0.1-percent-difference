@@ -151,7 +151,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* ── RIGHT: photo collage ──────────────────────────────────── */}
+      {/* ── RIGHT: 2×2 photo collage ─────────────────────────────── */}
       <motion.div
         initial={{ opacity: 0, x: 32 }}
         animate={{ opacity: 1, x: 0 }}
@@ -168,92 +168,35 @@ export function Hero() {
           minHeight: 0,
         }}
       >
-        {/* Photo 1 — tall, spans both rows */}
-        <a
-          href={DRIVE_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            gridColumn: "1",
-            gridRow: "1 / 3",
-            overflow: "hidden",
-            display: "block",
-            position: "relative",
-          }}
-          className="collage-photo"
-        >
-          <img
-            src="/pvs-gallery-1.png"
-            alt="Panel discussion"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center top",
-              display: "block",
-              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
-              filter: "brightness(0.88) saturate(0.9)",
-            }}
-          />
-        </a>
-
-        {/* Photo 2 — top right */}
-        <a
-          href={DRIVE_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            gridColumn: "2",
-            gridRow: "1",
-            overflow: "hidden",
-            display: "block",
-            position: "relative",
-          }}
-          className="collage-photo"
-        >
-          <img
-            src="/pvs-hero.jpg"
-            alt="Aerial stage view"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center 30%",
-              display: "block",
-              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
-              filter: "brightness(0.88) saturate(0.9)",
-            }}
-          />
-        </a>
-
-        {/* Photo 3 — bottom right */}
-        <a
-          href={DRIVE_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            gridColumn: "2",
-            gridRow: "2",
-            overflow: "hidden",
-            display: "block",
-            position: "relative",
-          }}
-          className="collage-photo"
-        >
-          <img
-            src="/pvs-gallery-2.jpg"
-            alt="Speaker on stage"
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-              display: "block",
-              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
-              filter: "brightness(0.88) saturate(0.9)",
-            }}
-          />
-        </a>
+        {[
+          { src: "/pvs-gallery-1.png", alt: "Panel discussion",     pos: "center top" },
+          { src: "/pvs-hero.jpg",      alt: "Aerial stage view",    pos: "center 30%" },
+          { src: "/pvs-gallery-2.jpg", alt: "Speaker on stage",     pos: "center"     },
+          { src: "/pvs-gallery-3.jpg", alt: "Fireside chat",        pos: "center"     },
+        ].map((photo, i) => (
+          <a
+            key={i}
+            href={DRIVE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="collage-photo"
+            style={{ overflow: "hidden", display: "block", position: "relative" }}
+          >
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: photo.pos,
+                display: "block",
+                transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
+                filter: "brightness(0.88) saturate(0.9)",
+              }}
+            />
+          </a>
+        ))}
       </motion.div>
 
       <style>{`
