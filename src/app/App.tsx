@@ -3,7 +3,6 @@ import { AnnouncementBar } from "./components/AnnouncementBar";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
-import { WhoShouldAttend } from "./components/WhoShouldAttend";
 import { Partners } from "./components/Partners";
 import { PastEvents } from "./components/PastEvents";
 import { Organizer } from "./components/Organizer";
@@ -159,7 +158,6 @@ export default function App() {
       <Hero />
       <Theme />
       <Partners />
-      <WhoShouldAttend />
       <PastEvents />
       {/* <Organizer /> — content moved to HostModal, triggered from footer */}
       <PodcastStills />

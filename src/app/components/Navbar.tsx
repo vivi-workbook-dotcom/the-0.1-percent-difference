@@ -10,7 +10,6 @@ const navLinks = [
 const aboutLinks = [
   { label: "Past Summits", id: "past-events" },
   { label: "Partners", id: "partners" },
-  { label: "Who Should Attend", id: "attend" },
   { label: "Podcast", id: "podcast" },
 ];
 
