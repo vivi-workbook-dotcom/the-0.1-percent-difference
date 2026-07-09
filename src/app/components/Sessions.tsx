@@ -9,7 +9,7 @@ const sessions = [
     label: "Panel",
     title: "AI Equation: Adoption, Economics & Judgement",
     area: "panel",
-    pos: "center top",
+    pos: "center 20%",
     titleSize: "clamp(16px, 1.5vw, 20px)",
   },
   {
@@ -33,7 +33,7 @@ const sessions = [
     label: "Founder's Note",
     title: "Founder's Note",
     area: "founder",
-    pos: "center top",
+    pos: "center center",
     titleSize: "clamp(11px, 0.9vw, 13px)",
   },
 ];
@@ -135,6 +135,7 @@ export function Sessions() {
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="session-card"
+              data-area={s.area}
               style={{
                 gridArea: s.area,
                 position: "relative",
@@ -215,8 +216,11 @@ export function Sessions() {
 
       <style>{`
         .session-card:hover .session-img {
-          transform: scale(1.04);
+          transform: scale(1.03);
           filter: brightness(0.9) saturate(1) !important;
+        }
+        [data-area="panel"]:hover .session-img {
+          transform: scale(1.015) !important;
         }
 
         @media (max-width: 767px) {
