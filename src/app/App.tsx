@@ -3,6 +3,7 @@ import { AnnouncementBar } from "./components/AnnouncementBar";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Sessions } from "./components/Sessions";
+import { FoodPartners } from "./components/FoodPartners";
 import { Theme } from "./components/Theme";
 import { Partners } from "./components/Partners";
 import { PastEvents } from "./components/PastEvents";
@@ -157,6 +158,7 @@ export default function App() {
       <Navbar />
       <Hero />
       <Sessions />
+      <FoodPartners />
       <Theme />
       <Partners />
       <PastEvents />
