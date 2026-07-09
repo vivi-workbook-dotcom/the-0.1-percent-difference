@@ -20,7 +20,7 @@ const partners = [
   {
     src: "/yogurt_alley.png",
     name: "Yogurt Alley",
-    href: undefined,
+    href: "https://yogurtalley.com/",
     rotate: "-1.5deg",
     offsetY: 16,
     size: 280,
@@ -28,7 +28,7 @@ const partners = [
   {
     src: "/wholy.png",
     name: "Wholy",
-    href: undefined,
+    href: "https://eatwholy.com/",
     rotate: "3deg",
     offsetY: 32,
     size: 250,
@@ -36,7 +36,7 @@ const partners = [
   {
     src: "/briks.jpg",
     name: "Briks",
-    href: undefined,
+    href: "https://www.amazon.in/Fast-Acting-Cognitive-Support-Caffeine-L-Theanine/dp/B0H725BNMB",
     rotate: "-2deg",
     offsetY: 8,
     size: 240,

@@ -21,7 +21,7 @@ export function Hero() {
       <div
         className="hero-content hero-left"
         style={{
-          flex: "0 0 50%",
+          flex: "0 0 44%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -170,7 +170,7 @@ export function Hero() {
         }}
       >
         {[
-          { src: "/pvs-gallery-1.png", alt: "Panel discussion",  pos: "center top", area: "tl"  },
+          { src: "/pvs-gallery-1.png", alt: "Panel discussion",  pos: "left top",   area: "tl"  },
           { src: "/pvs-hero.jpg",      alt: "Aerial stage view", pos: "center 30%", area: "tr"  },
           { src: "/audience.png",      alt: "Audience",          pos: "center",     area: "bot" },
         ].map((photo, i) => (
