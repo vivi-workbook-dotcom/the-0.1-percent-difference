@@ -3,13 +3,10 @@ import { AnnouncementBar } from "./components/AnnouncementBar";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
-import { WhoShouldAttend } from "./components/WhoShouldAttend";
 import { Partners } from "./components/Partners";
 import { PastEvents } from "./components/PastEvents";
 import { Organizer } from "./components/Organizer";
 import { PodcastStills } from "./components/PodcastSkills";
-import { Venue } from "./components/Venue";
-import { Tickets } from "./components/Tickets";
 import { Sponsor } from "./components/Sponsor";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -159,13 +156,10 @@ export default function App() {
       <Navbar />
       <Hero />
       <Theme />
-      <Tickets />
       <Partners />
-      <WhoShouldAttend />
       <PastEvents />
       {/* <Organizer /> — content moved to HostModal, triggered from footer */}
       <PodcastStills />
-      <Venue />
       {/* <Sponsor /> */}
       <Footer />
       <ScrollToTop />

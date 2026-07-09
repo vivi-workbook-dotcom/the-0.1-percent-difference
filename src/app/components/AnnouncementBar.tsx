@@ -1,9 +1,8 @@
-import { ArrowUpRight } from "lucide-react";
+import { Youtube, ArrowUpRight } from "lucide-react";
 
-const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
+const YOUTUBE_LINK = "https://youtube.com/@theproductstreet?si=-5p58v__NIiE_GE-";
 
 export function AnnouncementBar() {
-
   return (
     <div
       className="announcement-bar"
@@ -30,13 +29,16 @@ export function AnnouncementBar() {
           color: "#000",
           letterSpacing: "0.04em",
           margin: 0,
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
         }}
       >
-        🎟 Seats filling fast · General Admission closes July 3.{" "}
-        <span style={{ fontWeight: 400, opacity: 0.75 }}>Don't wait.</span>
+        🎬 Summit recap dropping soon!{" "}
+        <span style={{ fontWeight: 400, opacity: 0.75 }}>Subscribe on YouTube to get notified.</span>
       </p>
       <a
-        href={RAZORPAY_LINK}
+        href={YOUTUBE_LINK}
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -55,7 +57,8 @@ export function AnnouncementBar() {
           whiteSpace: "nowrap",
         }}
       >
-        Get Tickets
+        <Youtube size={13} />
+        Subscribe
         <ArrowUpRight size={12} />
       </a>
     </div>
