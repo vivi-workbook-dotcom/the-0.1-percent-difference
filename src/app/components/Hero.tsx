@@ -1,171 +1,50 @@
-import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import { ArrowUpRight } from "lucide-react";
 
-const EVENT_DATE = new Date("2026-07-04T16:30:00+05:30");
+const DRIVE_LINK = "https://drive.google.com/drive/folders/1gc97zRC7oVuBsNJSLKE51JIJbU-AgIW1?usp=drive_link";
 
-function useCountdown() {
-  const calc = () => {
-    const diff = EVENT_DATE.getTime() - Date.now();
-    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    return {
-      days: Math.floor(diff / 86400000),
-      hours: Math.floor((diff % 86400000) / 3600000),
-      minutes: Math.floor((diff % 3600000) / 60000),
-      seconds: Math.floor((diff % 60000) / 1000),
-    };
-  };
-  const [t, setT] = useState(calc);
-  useEffect(() => { const id = setInterval(() => setT(calc()), 1000); return () => clearInterval(id); }, []);
-  return t;
-}
+const filmStrip = [
+  { src: "/pvs-gallery-1.png", alt: "Panel discussion" },
+  { src: "/pvs-gallery-2.jpg", alt: "Opening remarks on stage" },
+  { src: "/pvs-gallery-3.jpg", alt: "Fireside chat" },
+];
 
 export function Hero() {
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-  const countdown = useCountdown();
-
   return (
     <section
       className="hero-section"
       style={{
         minHeight: "100vh",
-        background: "#000",
         position: "relative",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         justifyContent: "flex-end",
         paddingTop: 114,
-        paddingBottom: 80,
       }}
     >
-      {/* Grain texture overlay */}
-      <div
+      {/* Full-bleed hero photo */}
+      <img
+        src="/pvs-hero.jpg"
+        alt="Product Velocity Summit"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,
-          opacity: 0.4,
-          pointerEvents: "none",
-          zIndex: 1,
-        }}
-      />
-
-      {/* Atmospheric coral glow — bottom left */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: -200,
-          left: -100,
-          width: 700,
-          height: 700,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(246,88,75,0.1) 0%, transparent 65%)",
-          pointerEvents: "none",
-          zIndex: 0,
-        }}
-      />
-
-      {/* Subtle diagonal light streak — like a lens flare */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: "-30%",
-          width: "70%",
+          width: "100%",
           height: "100%",
-          background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.018) 50%, transparent 60%)",
-          pointerEvents: "none",
-          zIndex: 1,
-          animation: "heroShine 8s ease-in-out infinite",
-        }}
-      />
-
-      {/* Top right date display — Agora-style */}
-      <motion.div
-        initial={{ opacity: 0, x: 20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        className="hero-date-display"
-        style={{
-          position: "absolute",
-          top: 96,
-          right: 40,
-          textAlign: "right",
-          zIndex: 2,
-        }}
-      >
-        <div
-          style={{
-            fontFamily: "Montserrat, sans-serif",
-            fontSize: "clamp(40px, 5vw, 72px)",
-            fontWeight: 900,
-            color: "#f4f3ef",
-            lineHeight: 0.9,
-            letterSpacing: "-0.04em",
-            opacity: 0.12,
-          }}
-        >
-          4
-        </div>
-        <div
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: 11,
-            fontWeight: 500,
-            color: "#f4f3ef",
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            opacity: 0.2,
-            marginTop: 4,
-          }}
-        >
-          July 2026
-        </div>
-      </motion.div>
-
-      {/* Huge watermark "0.1%" */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -48%)",
-          pointerEvents: "none",
+          objectFit: "cover",
+          objectPosition: "center 30%",
           zIndex: 0,
-          userSelect: "none",
-        }}
-      >
-        <span
-          style={{
-            fontFamily: "Montserrat, sans-serif",
-            fontSize: "clamp(160px, 30vw, 420px)",
-            fontWeight: 900,
-            color: "#f6584b",
-            opacity: 0.05,
-            letterSpacing: "-0.06em",
-            whiteSpace: "nowrap",
-            display: "block",
-            lineHeight: 1,
-          }}
-        >
-          0.1%
-        </span>
-      </div>
-
-      {/* Thin horizontal divider mid-hero */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: 40,
-          right: 40,
-          height: "1px",
-          background: "rgba(244,243,239,0.04)",
-          zIndex: 1,
         }}
       />
+
+      {/* Dark gradient overlay — heavier at top and bottom for text legibility */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
+        zIndex: 1,
+      }} />
 
       {/* Main content */}
       <div
@@ -175,7 +54,7 @@ export function Hero() {
           zIndex: 2,
           maxWidth: 1280,
           margin: "0 auto",
-          padding: "0 40px",
+          padding: "0 40px 56px",
           width: "100%",
           boxSizing: "border-box",
         }}
@@ -185,303 +64,165 @@ export function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            marginBottom: 28,
-          }}
+          style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}
         >
           <div style={{
-            width: 32,
-            height: 1,
+            width: 32, height: 1,
             background: "#f6584b",
             boxShadow: "0 0 6px rgba(246,88,75,0.7)",
           }} />
-          <span
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: 11,
-              fontWeight: 600,
-              color: "#f6584b",
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-            }}
-          >
+          <span style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: 11,
+            fontWeight: 600,
+            color: "#f6584b",
+            letterSpacing: "0.3em",
+            textTransform: "uppercase",
+          }}>
             The Product Street Presents
           </span>
-          <span style={{ color: "#f5c518", fontSize: 14, opacity: 0.8, marginLeft: 4 }}>✦</span>
         </motion.div>
 
-        {/* Main headline */}
-        <motion.div
+        {/* Headline */}
+        <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <h1
-            style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontSize: "clamp(40px, 6.5vw, 86px)",
-              fontWeight: 900,
-              color: "#f4f3ef",
-              lineHeight: 0.92,
-              letterSpacing: "-0.04em",
-              marginBottom: 0,
-              maxWidth: "90%",
-            }}
-          >
-            <span style={{ opacity: 0.45, fontWeight: 500 }}>The</span>
-            <br />
-            <span style={{ color: "#f4f3ef" }}>Product </span>
-            <span style={{ color: "#f6584b", textShadow: "0 0 80px rgba(246,88,75,0.25)" }}>Velocity</span>
-            <br />
-            Summit
-          </h1>
-
-          <p
-            style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontSize: "clamp(17px, 2.2vw, 24px)",
-              fontWeight: 400,
-              color: "#f4f3ef",
-              opacity: 0.7,
-              letterSpacing: "0.04em",
-              marginTop: 20,
-              marginBottom: 0,
-            }}
-          >
-            Startup speed at enterprise scale in the AI era
-          </p>
-        </motion.div>
-
-        {/* Bottom row — event meta + CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
           style={{
-            marginTop: 44,
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-            gap: 32,
-            borderTop: "1px solid rgba(244,243,239,0.1)",
-            paddingTop: 32,
+            fontFamily: "Montserrat, sans-serif",
+            fontSize: "clamp(40px, 6.5vw, 86px)",
+            fontWeight: 900,
+            color: "#f4f3ef",
+            lineHeight: 0.92,
+            letterSpacing: "-0.04em",
+            marginBottom: 0,
           }}
         >
-          {/* Event meta */}
-          <div
-            className="hero-meta-row"
-            style={{
-              display: "flex",
-              flexWrap: "nowrap",
-              gap: 0,
-            }}
-          >
-            {[
-              { label: "Date", value: "July 4, 2026 · Sat" },
-              { label: "Time", value: "4:30 PM – 8:30 PM" },
-              { label: "Venue", value: "T HUB, Hyderabad" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="hero-meta-item"
-                style={{
-                  paddingRight: 32,
-                  paddingLeft: i > 0 ? 32 : 0,
-                  borderLeft: i > 0 ? "1px solid rgba(244,243,239,0.12)" : "none",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: 10,
-                    fontWeight: 700,
-                    color: "#f6584b",
-                    letterSpacing: "0.22em",
-                    textTransform: "uppercase",
-                    marginBottom: 5,
-                  }}
-                >
-                  {item.label}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: "clamp(13px, 1.4vw, 16px)",
-                    fontWeight: 600,
-                    color: "#f4f3ef",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {item.value}
-                </div>
-              </div>
-            ))}
-          </div>
+          <span style={{ opacity: 0.45, fontWeight: 500 }}>The</span>
+          <br />
+          <span>Product </span>
+          <span style={{ color: "#f6584b", textShadow: "0 0 80px rgba(246,88,75,0.35)" }}>Velocity</span>
+          <br />
+          Summit
+        </motion.h1>
 
-          {/* CTAs */}
-          <div className="hero-ctas" style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            {/* TODO: replace href with real Razorpay Payment Link */}
-            <a
-              href="https://rzp.io/rzp/theproductstreet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-shine"
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: 13,
-                fontWeight: 600,
-                color: "#000",
-                background: "#f6584b",
-                padding: "14px 32px",
-                borderRadius: 2,
-                textDecoration: "none",
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                transition: "all 0.2s ease",
-                display: "inline-block",
-                position: "relative",
-                overflow: "hidden",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-2px)")}
-              onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}
-            >
-              Get Tickets
-            </a>
-            <button
-              onClick={() => scrollTo("agenda")}
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: 13,
-                fontWeight: 600,
-                color: "#f4f3ef",
-                background: "transparent",
-                border: "1px solid rgba(244,243,239,0.25)",
-                padding: "14px 32px",
-                borderRadius: 2,
-                cursor: "pointer",
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-                transition: "all 0.2s ease",
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(244,243,239,0.6)";
-                e.currentTarget.style.background = "rgba(244,243,239,0.05)";
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(244,243,239,0.25)";
-                e.currentTarget.style.background = "transparent";
-              }}
-            >
-              View Agenda
-            </button>
-          </div>
+        {/* Recap line */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "clamp(13px, 1.4vw, 16px)",
+            color: "#f4f3ef",
+            opacity: 0.55,
+            letterSpacing: "0.04em",
+            marginTop: 20,
+            marginBottom: 0,
+          }}
+        >
+          July 4, 2026 · T HUB, Hyderabad · That's a wrap. 🎉
+        </motion.p>
+
+        {/* View all CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.65 }}
+          style={{ marginTop: 32 }}
+        >
+          <a
+            href={DRIVE_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-shine"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              fontFamily: "Poppins, sans-serif",
+              fontSize: 12,
+              fontWeight: 700,
+              color: "#000",
+              background: "#f6584b",
+              padding: "13px 28px",
+              textDecoration: "none",
+              letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              borderRadius: 2,
+              position: "relative",
+              overflow: "hidden",
+              transition: "background 0.2s ease",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
+            onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
+          >
+            View All Photos & Videos
+            <ArrowUpRight size={14} />
+          </a>
         </motion.div>
 
-        {/* Countdown — below CTAs */}
+        {/* Film strip */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          style={{ marginTop: 36 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          style={{
+            marginTop: 48,
+            display: "flex",
+            gap: 8,
+            alignItems: "stretch",
+          }}
+          className="hero-film-strip"
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-            <div style={{ width: 24, height: 1, background: "#f6584b", opacity: 0.5 }} />
-            <span style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: 10,
-              fontWeight: 600,
-              color: "#f4f3ef",
-              opacity: 0.3,
-              letterSpacing: "0.3em",
-              textTransform: "uppercase",
-            }}>
-              Countdown to July 4
-            </span>
-          </div>
-
-          <div className="hero-countdown" style={{ display: "flex", alignItems: "stretch", gap: 0 }}>
-            {[
-              { value: countdown.days, label: "Days" },
-              { value: countdown.hours, label: "Hrs" },
-              { value: countdown.minutes, label: "Mins" },
-              { value: countdown.seconds, label: "Secs" },
-            ].map((unit, i) => (
-              <div key={unit.label} style={{ display: "flex", alignItems: "stretch" }}>
-                {i > 0 && (
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    padding: "0 10px",
-                    fontSize: "clamp(20px, 3vw, 36px)",
-                    fontFamily: "Montserrat, sans-serif",
-                    fontWeight: 900,
-                    color: "#f6584b",
-                    opacity: 0.3,
-                    lineHeight: 1,
-                    paddingBottom: 20,
-                  }}>:</div>
-                )}
-                <div style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  background: i === 0 ? "rgba(246,88,75,0.07)" : "rgba(244,243,239,0.03)",
-                  border: i === 0 ? "1px solid rgba(246,88,75,0.2)" : "1px solid rgba(244,243,239,0.07)",
-                  padding: "16px 24px 14px",
-                  minWidth: "clamp(64px, 8vw, 96px)",
-                  position: "relative",
-                  overflow: "hidden",
-                }}>
-                  {i === 0 && (
-                    <div style={{
-                      position: "absolute",
-                      top: 0, left: 0, right: 0,
-                      height: 2,
-                      background: "#f6584b",
-                      boxShadow: "0 0 8px rgba(246,88,75,0.6)",
-                    }} />
-                  )}
-                  <span style={{
-                    fontFamily: "Montserrat, sans-serif",
-                    fontSize: "clamp(32px, 4.5vw, 64px)",
-                    fontWeight: 900,
-                    color: i === 0 ? "#f6584b" : "#f4f3ef",
-                    letterSpacing: "-0.04em",
-                    lineHeight: 1,
-                    fontVariantNumeric: "tabular-nums",
-                    minWidth: "2ch",
-                    textAlign: "center",
-                    display: "block",
-                  }}>
-                    {String(unit.value).padStart(2, "0")}
-                  </span>
-                  <span style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: 9,
-                    fontWeight: 600,
-                    color: i === 0 ? "#f6584b" : "#f4f3ef",
-                    opacity: i === 0 ? 0.7 : 0.25,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    marginTop: 8,
-                  }}>
-                    {unit.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          {filmStrip.map((photo, i) => (
+            <a
+              key={i}
+              href={DRIVE_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                flex: 1,
+                height: 180,
+                overflow: "hidden",
+                display: "block",
+                position: "relative",
+                border: "1px solid rgba(244,243,239,0.1)",
+                transition: "border-color 0.25s ease",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(246,88,75,0.4)";
+                const img = e.currentTarget.querySelector("img") as HTMLImageElement;
+                if (img) img.style.transform = "scale(1.05)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(244,243,239,0.1)";
+                const img = e.currentTarget.querySelector("img") as HTMLImageElement;
+                if (img) img.style.transform = "scale(1)";
+              }}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                  display: "block",
+                  filter: "brightness(0.8) saturate(0.9)",
+                  transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease",
+                }}
+              />
+            </a>
+          ))}
         </motion.div>
       </div>
 
       <style>{`
-        @keyframes heroShine {
-          0%, 100% { transform: translateX(0); opacity: 1; }
-          50% { transform: translateX(60%); opacity: 0.6; }
+        @media (max-width: 640px) {
+          .hero-film-strip { gap: 4px !important; }
+          .hero-film-strip a { height: 110px !important; }
         }
       `}</style>
     </section>
