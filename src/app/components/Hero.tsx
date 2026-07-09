@@ -162,6 +162,7 @@ export function Hero() {
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gridTemplateRows: "1fr 1fr",
+          gridTemplateAreas: '"tl tr" "bot bot"',
           gap: 6,
           padding: "24px 40px 24px 0",
           boxSizing: "border-box",
@@ -169,10 +170,9 @@ export function Hero() {
         }}
       >
         {[
-          { src: "/pvs-gallery-1.png", alt: "Panel discussion",     pos: "center top" },
-          { src: "/pvs-hero.jpg",      alt: "Aerial stage view",    pos: "center 30%" },
-          { src: "/audience.png",       alt: "Audience",            pos: "center"     },
-          { src: "/audience.png",        alt: "Audience",             pos: "center"     },
+          { src: "/pvs-gallery-1.png", alt: "Panel discussion",  pos: "center top", area: "tl"  },
+          { src: "/pvs-hero.jpg",      alt: "Aerial stage view", pos: "center 30%", area: "tr"  },
+          { src: "/audience.png",      alt: "Audience",          pos: "center",     area: "bot" },
         ].map((photo, i) => (
           <a
             key={i}
@@ -180,7 +180,7 @@ export function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="collage-photo"
-            style={{ overflow: "hidden", display: "block", position: "relative" }}
+            style={{ overflow: "hidden", display: "block", position: "relative", gridArea: photo.area }}
           >
             <img
               src={photo.src}
