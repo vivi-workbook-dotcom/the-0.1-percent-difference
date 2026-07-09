@@ -1,15 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Youtube, Menu, X } from "lucide-react";
 
-const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
+const YOUTUBE_LINK = "https://youtube.com/@theproductstreet?si=-5p58v__NIiE_GE-";
 
 const navLinks = [
-];
-
-const aboutLinks = [
   { label: "Past Summits", id: "past-events" },
-  { label: "Partners", id: "partners" },
-  { label: "Podcast", id: "podcast" },
 ];
 
 function scrollTo(id: string) {
@@ -20,8 +15,6 @@ function scrollTo(id: string) {
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -29,22 +22,10 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const handler = () => { if (window.innerWidth >= 768) setMenuOpen(false); };
     window.addEventListener("resize", handler);
     return () => window.removeEventListener("resize", handler);
-  }, []);
-
-  // Close About dropdown on outside click
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (aboutRef.current && !aboutRef.current.contains(e.target as Node)) {
-        setAboutOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
   }, []);
 
   return (
@@ -85,16 +66,12 @@ export function Navbar() {
             }}
           />
 
-          {/* Right side: nav links + Register CTA + hamburger */}
+          {/* Right side */}
           <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
             {/* Desktop nav links */}
             <div
               className="nav-links-desktop"
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: 28,
-              }}
+              style={{ display: "flex", alignItems: "center", gap: 28 }}
             >
               {navLinks.map(link => (
                 <button
@@ -120,84 +97,11 @@ export function Navbar() {
                   {link.label}
                 </button>
               ))}
-
-              {/* About dropdown */}
-              <div ref={aboutRef} style={{ position: "relative" }}>
-                <button
-                  onClick={() => setAboutOpen(o => !o)}
-                  style={{
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                    fontFamily: "Poppins, sans-serif",
-                    fontSize: 11,
-                    fontWeight: 600,
-                    color: aboutOpen ? "#f6584b" : "#f4f3ef",
-                    opacity: aboutOpen ? 1 : 0.75,
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    padding: 0,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 4,
-                    transition: "opacity 0.2s ease, color 0.2s ease",
-                  }}
-                  onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.color = "#f6584b"; }}
-                  onMouseLeave={e => { if (!aboutOpen) { e.currentTarget.style.opacity = "0.75"; e.currentTarget.style.color = "#f4f3ef"; } }}
-                >
-                  About
-                  <ChevronDown size={12} style={{ transition: "transform 0.2s ease", transform: aboutOpen ? "rotate(180deg)" : "rotate(0deg)" }} />
-                </button>
-
-                {/* Dropdown panel */}
-                {aboutOpen && (
-                  <div style={{
-                    position: "absolute",
-                    top: "calc(100% + 16px)",
-                    left: "50%",
-                    transform: "translateX(-50%)",
-                    background: "rgba(8,8,8,0.97)",
-                    backdropFilter: "blur(20px)",
-                    border: "1px solid rgba(244,243,239,0.08)",
-                    padding: "8px 0",
-                    minWidth: 180,
-                    zIndex: 200,
-                  }}>
-                    {aboutLinks.map(link => (
-                      <button
-                        key={link.id}
-                        onClick={() => { scrollTo(link.id); setAboutOpen(false); }}
-                        style={{
-                          display: "block",
-                          width: "100%",
-                          background: "none",
-                          border: "none",
-                          cursor: "pointer",
-                          fontFamily: "Poppins, sans-serif",
-                          fontSize: 11,
-                          fontWeight: 600,
-                          color: "#f4f3ef",
-                          opacity: 0.6,
-                          letterSpacing: "0.08em",
-                          textTransform: "uppercase",
-                          padding: "10px 20px",
-                          textAlign: "left",
-                          transition: "opacity 0.15s ease, background 0.15s ease",
-                        }}
-                        onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.background = "rgba(246,88,75,0.07)"; }}
-                        onMouseLeave={e => { e.currentTarget.style.opacity = "0.6"; e.currentTarget.style.background = "none"; }}
-                      >
-                        {link.label}
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
             </div>
 
-            {/* Register CTA — desktop only; mobile has it in the drawer + hero */}
+            {/* Subscribe CTA */}
             <a
-              href={RAZORPAY_LINK}
+              href={YOUTUBE_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-shine nav-register-cta nav-register-desktop"
@@ -223,8 +127,8 @@ export function Navbar() {
               onMouseEnter={e => (e.currentTarget.style.background = "#e04e3d")}
               onMouseLeave={e => (e.currentTarget.style.background = "#f6584b")}
             >
-              Register
-              <ArrowUpRight size={12} />
+              <Youtube size={13} />
+              Subscribe
             </a>
 
             {/* Hamburger — mobile only */}
@@ -252,13 +156,13 @@ export function Navbar() {
           className="nav-mobile-drawer"
           style={{
             overflow: "hidden",
-            maxHeight: menuOpen ? 400 : 0,
+            maxHeight: menuOpen ? 300 : 0,
             transition: "max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1)",
             borderTop: menuOpen ? "1px solid rgba(244,243,239,0.06)" : "none",
           }}
         >
           <div style={{ padding: "24px 40px 32px" }}>
-            {[...navLinks, ...aboutLinks].map((link, i, arr) => (
+            {navLinks.map((link, i, arr) => (
               <button
                 key={link.id}
                 onClick={() => { scrollTo(link.id); setMenuOpen(false); }}
@@ -277,17 +181,17 @@ export function Navbar() {
                   textTransform: "uppercase",
                   padding: "16px 0",
                   textAlign: "left",
-                  opacity: i >= navLinks.length ? 0.45 : 0.7,
+                  opacity: 0.7,
                   transition: "opacity 0.2s ease",
                 }}
                 onMouseEnter={e => (e.currentTarget.style.opacity = "1")}
-                onMouseLeave={e => (e.currentTarget.style.opacity = i >= navLinks.length ? "0.45" : "0.7")}
+                onMouseLeave={e => (e.currentTarget.style.opacity = "0.7")}
               >
                 {link.label}
               </button>
             ))}
             <a
-              href={RAZORPAY_LINK}
+              href={YOUTUBE_LINK}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
@@ -308,22 +212,20 @@ export function Navbar() {
                 borderRadius: 2,
               }}
             >
-              Get Tickets
-              <ArrowUpRight size={13} />
+              <Youtube size={14} />
+              Subscribe
             </a>
           </div>
         </div>
       </nav>
 
       <style>{`
-        /* Desktop: show nav links + register CTA, hide hamburger */
         @media (min-width: 768px) {
           .nav-links-desktop { display: flex !important; }
           .nav-hamburger { display: none !important; }
           .nav-mobile-drawer { display: none !important; }
           .nav-register-desktop { display: inline-flex !important; }
         }
-        /* Mobile: hide nav links, show hamburger + compact register CTA */
         @media (max-width: 767px) {
           .nav-links-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; margin-right: 8px !important; }
