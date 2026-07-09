@@ -4,7 +4,6 @@ import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 const RAZORPAY_LINK = "https://rzp.io/rzp/theproductstreet";
 
 const navLinks = [
-  { label: "Venue", id: "venue" },
 ];
 
 const aboutLinks = [

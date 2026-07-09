@@ -7,7 +7,6 @@ import { Partners } from "./components/Partners";
 import { PastEvents } from "./components/PastEvents";
 import { Organizer } from "./components/Organizer";
 import { PodcastStills } from "./components/PodcastSkills";
-import { Venue } from "./components/Venue";
 import { Sponsor } from "./components/Sponsor";
 import { Footer } from "./components/Footer";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -161,7 +160,6 @@ export default function App() {
       <PastEvents />
       {/* <Organizer /> — content moved to HostModal, triggered from footer */}
       <PodcastStills />
-      <Venue />
       {/* <Sponsor /> */}
       <Footer />
       <ScrollToTop />
