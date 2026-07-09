@@ -3,73 +3,47 @@ import { ArrowUpRight } from "lucide-react";
 
 const DRIVE_LINK = "https://drive.google.com/drive/folders/1gc97zRC7oVuBsNJSLKE51JIJbU-AgIW1?usp=drive_link";
 
-const filmStrip = [
-  { src: "/pvs-gallery-1.png", alt: "Panel discussion" },
-  { src: "/pvs-gallery-2.jpg", alt: "Opening remarks on stage" },
-  { src: "/pvs-gallery-3.jpg", alt: "Fireside chat" },
-];
-
 export function Hero() {
   return (
     <section
       className="hero-section"
       style={{
         minHeight: "100vh",
+        background: "#000",
         position: "relative",
         overflow: "hidden",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
+        alignItems: "stretch",
         paddingTop: 114,
       }}
     >
-      {/* Full-bleed hero photo */}
-      <img
-        src="/pvs-hero.jpg"
-        alt="Product Velocity Summit"
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          objectPosition: "center 30%",
-          zIndex: 0,
-        }}
-      />
-
-      {/* Dark gradient overlay — heavier at top and bottom for text legibility */}
-      <div style={{
-        position: "absolute",
-        inset: 0,
-        background: "linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.55) 65%, rgba(0,0,0,0.92) 100%)",
-        zIndex: 1,
-      }} />
-
-      {/* Main content */}
+      {/* ── LEFT: text content ───────────────────────────────────── */}
       <div
-        className="hero-content"
+        className="hero-content hero-left"
         style={{
+          flex: "0 0 50%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "60px 56px 80px 40px",
+          boxSizing: "border-box",
           position: "relative",
           zIndex: 2,
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "0 40px 56px",
-          width: "100%",
-          boxSizing: "border-box",
+          maxWidth: 680,
         }}
       >
         {/* Eyelet */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}
         >
           <div style={{
             width: 32, height: 1,
             background: "#f6584b",
             boxShadow: "0 0 6px rgba(246,88,75,0.7)",
+            flexShrink: 0,
           }} />
           <span style={{
             fontFamily: "Poppins, sans-serif",
@@ -87,21 +61,21 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           style={{
             fontFamily: "Montserrat, sans-serif",
-            fontSize: "clamp(40px, 6.5vw, 86px)",
+            fontSize: "clamp(36px, 5.5vw, 76px)",
             fontWeight: 900,
             color: "#f4f3ef",
             lineHeight: 0.92,
             letterSpacing: "-0.04em",
-            marginBottom: 0,
+            margin: 0,
           }}
         >
-          <span style={{ opacity: 0.45, fontWeight: 500 }}>The</span>
+          <span style={{ opacity: 0.4, fontWeight: 500 }}>The</span>
           <br />
           <span>Product </span>
-          <span style={{ color: "#f6584b", textShadow: "0 0 80px rgba(246,88,75,0.35)" }}>Velocity</span>
+          <span style={{ color: "#f6584b", textShadow: "0 0 60px rgba(246,88,75,0.25)" }}>Velocity</span>
           <br />
           Summit
         </motion.h1>
@@ -110,26 +84,40 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
           style={{
             fontFamily: "Poppins, sans-serif",
-            fontSize: "clamp(13px, 1.4vw, 16px)",
+            fontSize: "clamp(12px, 1.1vw, 14px)",
             color: "#f4f3ef",
-            opacity: 0.55,
+            opacity: 0.45,
             letterSpacing: "0.04em",
-            marginTop: 20,
+            marginTop: 24,
             marginBottom: 0,
+            lineHeight: 1.6,
           }}
         >
-          July 4, 2026 · T HUB, Hyderabad · That's a wrap. 🎉
+          July 4, 2026 &nbsp;·&nbsp; T HUB, Hyderabad &nbsp;·&nbsp; That's a wrap. 🎉
         </motion.p>
 
-        {/* View all CTA */}
+        {/* Divider */}
+        <motion.div
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.6, delay: 0.55 }}
+          style={{
+            height: 1,
+            background: "rgba(244,243,239,0.08)",
+            marginTop: 36,
+            marginBottom: 36,
+            transformOrigin: "left",
+          }}
+        />
+
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.65 }}
-          style={{ marginTop: 32 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
         >
           <a
             href={DRIVE_LINK}
@@ -145,7 +133,7 @@ export function Hero() {
               fontWeight: 700,
               color: "#000",
               background: "#f6584b",
-              padding: "13px 28px",
+              padding: "14px 28px",
               textDecoration: "none",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
@@ -161,68 +149,135 @@ export function Hero() {
             <ArrowUpRight size={14} />
           </a>
         </motion.div>
-
-        {/* Film strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          style={{
-            marginTop: 48,
-            display: "flex",
-            gap: 8,
-            alignItems: "stretch",
-          }}
-          className="hero-film-strip"
-        >
-          {filmStrip.map((photo, i) => (
-            <a
-              key={i}
-              href={DRIVE_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                flex: 1,
-                height: 180,
-                overflow: "hidden",
-                display: "block",
-                position: "relative",
-                border: "1px solid rgba(244,243,239,0.1)",
-                transition: "border-color 0.25s ease",
-              }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(246,88,75,0.4)";
-                const img = e.currentTarget.querySelector("img") as HTMLImageElement;
-                if (img) img.style.transform = "scale(1.05)";
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(244,243,239,0.1)";
-                const img = e.currentTarget.querySelector("img") as HTMLImageElement;
-                if (img) img.style.transform = "scale(1)";
-              }}
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center",
-                  display: "block",
-                  filter: "brightness(0.8) saturate(0.9)",
-                  transition: "transform 0.45s cubic-bezier(0.16,1,0.3,1), filter 0.3s ease",
-                }}
-              />
-            </a>
-          ))}
-        </motion.div>
       </div>
 
+      {/* ── RIGHT: photo collage ──────────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, x: 32 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="hero-right"
+        style={{
+          flex: "1 1 50%",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gridTemplateRows: "1fr 1fr",
+          gap: 6,
+          padding: "24px 40px 24px 0",
+          boxSizing: "border-box",
+          minHeight: 0,
+        }}
+      >
+        {/* Photo 1 — tall, spans both rows */}
+        <a
+          href={DRIVE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            gridColumn: "1",
+            gridRow: "1 / 3",
+            overflow: "hidden",
+            display: "block",
+            position: "relative",
+          }}
+          className="collage-photo"
+        >
+          <img
+            src="/pvs-gallery-1.png"
+            alt="Panel discussion"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center top",
+              display: "block",
+              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
+              filter: "brightness(0.88) saturate(0.9)",
+            }}
+          />
+        </a>
+
+        {/* Photo 2 — top right */}
+        <a
+          href={DRIVE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            gridColumn: "2",
+            gridRow: "1",
+            overflow: "hidden",
+            display: "block",
+            position: "relative",
+          }}
+          className="collage-photo"
+        >
+          <img
+            src="/pvs-hero.jpg"
+            alt="Aerial stage view"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center 30%",
+              display: "block",
+              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
+              filter: "brightness(0.88) saturate(0.9)",
+            }}
+          />
+        </a>
+
+        {/* Photo 3 — bottom right */}
+        <a
+          href={DRIVE_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            gridColumn: "2",
+            gridRow: "2",
+            overflow: "hidden",
+            display: "block",
+            position: "relative",
+          }}
+          className="collage-photo"
+        >
+          <img
+            src="/pvs-gallery-2.jpg"
+            alt="Speaker on stage"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+              display: "block",
+              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
+              filter: "brightness(0.88) saturate(0.9)",
+            }}
+          />
+        </a>
+      </motion.div>
+
       <style>{`
-        @media (max-width: 640px) {
-          .hero-film-strip { gap: 4px !important; }
-          .hero-film-strip a { height: 110px !important; }
+        .collage-photo:hover img {
+          transform: scale(1.04);
+          filter: brightness(1) saturate(1) !important;
+        }
+
+        /* Mobile: stack vertically */
+        @media (max-width: 767px) {
+          .hero-section {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .hero-left {
+            flex: none !important;
+            padding: 40px 20px 32px !important;
+            max-width: 100% !important;
+          }
+          .hero-right {
+            flex: none !important;
+            height: 320px !important;
+            padding: 0 20px 32px !important;
+          }
         }
       `}</style>
     </section>
