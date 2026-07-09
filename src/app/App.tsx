@@ -5,8 +5,6 @@ import { Hero } from "./components/Hero";
 import { Theme } from "./components/Theme";
 import { WhoShouldAttend } from "./components/WhoShouldAttend";
 import { Partners } from "./components/Partners";
-import { Agenda } from "./components/Agenda";
-import { Speakers } from "./components/Speakers";
 import { PastEvents } from "./components/PastEvents";
 import { Organizer } from "./components/Organizer";
 import { PodcastStills } from "./components/PodcastSkills";
@@ -160,9 +158,7 @@ export default function App() {
       <AnnouncementBar />
       <Navbar />
       <Hero />
-      <Speakers />
       <Theme />
-      <Agenda />
       <Tickets />
       <Partners />
       <WhoShouldAttend />
