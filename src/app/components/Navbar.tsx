@@ -1,13 +1,8 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-function YouTubeIcon({ size = 20 }: { size?: number }) {
-  return (
-    <svg width={size} height={size * 0.7} viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M23.495 2.656a3.016 3.016 0 0 0-2.122-2.136C19.505 0 12 0 12 0S4.495 0 2.627.52A3.016 3.016 0 0 0 .505 2.656 31.64 31.64 0 0 0 0 8.5a31.64 31.64 0 0 0 .505 5.844 3.016 3.016 0 0 0 2.122 2.136C4.495 17 12 17 12 17s7.505 0 9.373-.52a3.016 3.016 0 0 0 2.122-2.136A31.64 31.64 0 0 0 24 8.5a31.64 31.64 0 0 0-.505-5.844z" fill="currentColor"/>
-      <path d="M9.6 12.143L15.818 8.5 9.6 4.857v7.286z" fill="#fff"/>
-    </svg>
-  );
+function YouTubeIcon({ size = 28 }: { size?: number }) {
+  return <img src="/youtube.png" alt="YouTube" width={size} height={size} style={{ display: "block", objectFit: "contain" }} />;
 }
 
 const YOUTUBE_LINK = "https://youtube.com/@theproductstreet?si=-5p58v__NIiE_GE-";
@@ -119,13 +114,12 @@ export function Navbar() {
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                color: "#fff",
                 textDecoration: "none",
-                opacity: 0.8,
-                transition: "opacity 0.2s ease, transform 0.2s ease",
+                transition: "transform 0.2s ease, opacity 0.2s ease",
+                opacity: 0.9,
               }}
-              onMouseEnter={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "scale(1.12)"; }}
-              onMouseLeave={e => { e.currentTarget.style.opacity = "0.8"; e.currentTarget.style.transform = "scale(1)"; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = "scale(1.12)"; e.currentTarget.style.opacity = "1"; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.opacity = "0.9"; }}
             >
               <YouTubeIcon size={28} />
             </a>
