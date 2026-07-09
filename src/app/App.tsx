@@ -2,6 +2,7 @@ import "./components/styles/fonts.css";
 import { AnnouncementBar } from "./components/AnnouncementBar";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
+import { Sessions } from "./components/Sessions";
 import { Theme } from "./components/Theme";
 import { Partners } from "./components/Partners";
 import { PastEvents } from "./components/PastEvents";
@@ -155,6 +156,7 @@ export default function App() {
       <AnnouncementBar />
       <Navbar />
       <Hero />
+      <Sessions />
       <Theme />
       <Partners />
       <PastEvents />
