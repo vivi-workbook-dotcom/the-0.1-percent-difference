@@ -13,6 +13,7 @@ function YouTubeIcon({ size = 20 }: { size?: number }) {
 const YOUTUBE_LINK = "https://youtube.com/@theproductstreet?si=-5p58v__NIiE_GE-";
 
 const navLinks = [
+  { label: "Highlights", id: "sessions" },
   { label: "Past Summits", id: "past-events" },
 ];
 
