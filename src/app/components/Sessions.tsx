@@ -21,7 +21,7 @@ const sessions = [
     titleSize: "clamp(13px, 1.1vw, 16px)",
   },
   {
-    src: "/pvs-mahuya-talk.jpg",
+    src: "/mahuya_talk.JPG",
     label: "Keynote",
     title: "I Asked AI. Then I Asked Humans. 20 Decisions. 20 Outcomes.",
     area: "mahuya",
